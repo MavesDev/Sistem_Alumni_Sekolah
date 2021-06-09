@@ -15,9 +15,9 @@ class CreateKontakTable extends Migration
     {
         Schema::create('kontak', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
+            $table->string('address', 255);
             $table->string('whatsapp',20)->unique();
-            $table->string('pesan',455);
+            $table->text('message');
             $table->timestamps();
         });
     }
