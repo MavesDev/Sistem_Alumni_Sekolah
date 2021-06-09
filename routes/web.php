@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/alumnus', function () {
     return view('daftar-alumni');
 });
+Route::get('/', function () {
+    return view('welcome');
+});
