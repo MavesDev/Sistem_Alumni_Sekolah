@@ -66,12 +66,12 @@
         </div>
     </header>
 
-    <div style="margin-top: 100px;">
+    <div style="margin-top: 50px;">
         @yield('container')
     </div>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 280px;">
+    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 120px;">
 
         <div class="footer-top" style="background-color: #1f1f1f;">
             <div class="container">
