@@ -80,9 +80,9 @@
                     <div class="col-lg-4 col-md-6 footer-contact">
                         <h3>SMKN 1 Katapang</h3>
                         <p>
-                            A108 Adam Street <br>
-                            New York, NY 535022<br>
-                            United States <br><br>
+                            Jalan Ceuri Terusan Kopo KM. 13,5<br>
+                            Kec. Katapang, Kab. Bandung<br>
+                            Indonesia <br><br>
                             <strong>Copyright &copy;</strong><br>
                             <strong>SMKN 1 Katapang, 2021</strong><br>
                         </p>
@@ -101,9 +101,11 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Kontak Kami</h4>
                         <ul>
-                            <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">Email@Gmail.com</a></li>
-                            <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;">@Instagram</a></li>
-                            <li><i class="fab fa-whatsapp"></i> <a href="#" style="padding-left: 15px;">0000-0000-000</a></li>
+                            <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
+                            <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
+                            {{--FIXME ikon untuk phone dan website,saya tidak tahu apa,buka fontawesome loadingnya lama   --}}
+                            <li><i class="fab fa-fax"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
+                            <li><i class="fab fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
                         </ul>
                     </div>
 
