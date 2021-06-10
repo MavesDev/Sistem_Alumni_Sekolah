@@ -17,5 +17,5 @@ Route::get('/alumnus', function () {
     return view('daftar-alumni');
 });
 Route::get('/', function () {
-    return view('welcome');
+    return view('beranda');
 });

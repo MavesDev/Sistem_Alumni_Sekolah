@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #a5f4ed;
+  background: #5faee3;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .back-to-top:hover {
-  background: #57aae1;
+  background:  #1f1f1f;
   color: #fff;
 }
 
@@ -89,6 +89,13 @@ h1, h2, h3, h4, h5, h6 {
 
 #header .logo img {
   max-height: 40px;
+}
+
+@media (max-width: 768px) {
+  #header .logo img 
+  {
+    display: none;  
+  }
 }
 
 /*--------------------------------------------------------------
@@ -133,6 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar ul {
   margin: 0;
   padding: 0;
+  z-index: 0;
   display: flex;
   list-style: none;
   align-items: center;
@@ -153,6 +161,11 @@ h1, h2, h3, h4, h5, h6 {
   color: #4f5a62;
   white-space: nowrap;
   transition: 0.3s;
+}
+
+.navbar a:hover
+{
+  color: #a5f4ed;
 }
 
 .navbar a i, .navbar a:focus i {
@@ -266,7 +279,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar-mobile .mobile-nav-toggle {
   position: absolute;
-  top: 15px;
+  top: 30px;
   right: 15px;
 }
 
@@ -1235,7 +1248,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  color: #444444;
+  color: white;
   font-size: 14px;
   background: #f7fbfe;
 }
@@ -1262,13 +1275,13 @@ section {
   line-height: 24px;
   margin-bottom: 0;
   font-family: "Raleway", sans-serif;
-  color: #777777;
+  color: white;
 }
 
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: white;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1301,7 +1314,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a {
-  color: #777777;
+  color: white;
   transition: 0.3s;
   display: inline-block;
   line-height: 1;
@@ -1319,7 +1332,7 @@ section {
 #footer .footer-newsletter h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #444444;
+  color: white;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1363,7 +1376,7 @@ section {
 #footer .credits {
   padding-top: 5px;
   font-size: 13px;
-  color: #444444;
+  color: white;
 }
 
 #footer .social-links a {
@@ -1385,4 +1398,12 @@ section {
   background: #5faee3;
   color: #fff;
   text-decoration: none;
+}
+
+@media (max-width: 768px) 
+{
+  #footer img
+  {
+    display: none;
+  }  
 }
