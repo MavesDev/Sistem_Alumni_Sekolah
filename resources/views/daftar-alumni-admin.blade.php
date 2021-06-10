@@ -106,7 +106,7 @@
                 </tr>
             </thead>
             <tbody>
-                {{-- ini hide dulu kalau mau liat yg native --}}
+                {{-- ini hide dulu buat liat yg native --}}
                 {{-- heup --}}
                 <?php
                 $dbhost = 'localhost';
@@ -130,6 +130,7 @@
                     echo "<td>$data[tambah-aja-di-dbnya-user_angkatan]</td>";
                     echo "<td>
                         <button class="btn btn-success btn-sm">Detail</button>
+                        <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
                         </td>";
                     echo '</tr>';
                 }
@@ -150,6 +151,8 @@
                         <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
                     </td>
                 </tr> --}}
+
+                
             </tbody>
         </table>
     </div>
@@ -160,4 +163,3 @@
 
 
 @endsection
->>>>>>> daftar-alumni
