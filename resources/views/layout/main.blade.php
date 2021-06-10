@@ -66,12 +66,12 @@
         </div>
     </header>
 
-    <div style="margin-top: 100px;">
+    <div style="margin-top: 50px;">
         @yield('container')
     </div>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 280px;">
+    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 120px;">
 
         <div class="footer-top" style="background-color: #1f1f1f;">
             <div class="container">
@@ -104,8 +104,8 @@
                             <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
                             <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
                             {{--FIXME ikon untuk phone dan website,saya tidak tahu apa,buka fontawesome loadingnya lama   --}}
-                            <li><i class="fab fa-fax"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
-                            <li><i class="fab fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
+                            <li><i class="fas fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
                         </ul>
                     </div>
 
