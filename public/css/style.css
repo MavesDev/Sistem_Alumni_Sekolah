@@ -351,7 +351,7 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/hero-bg.jpg") center center;
   background-size: cover;
   position: relative;
-  margin-top: 70px;
+  /* margin-top: 70px; */
   padding: 0;
 }
 

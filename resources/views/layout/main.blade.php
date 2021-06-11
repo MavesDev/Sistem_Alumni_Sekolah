@@ -31,12 +31,11 @@
 </head>
 
 <body>
-    <header id="header" class="fixed-top d-flex align-items-center">
+    <header id="header" class="fixed-top d-flex align-items-center" style="position: sticky; top:0;">
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
                 <h1><a href="index.html" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
-                <!-- Uncomment below if you prefer to use an image logo -->
                 <a href="index.html"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
             </div>
 
@@ -66,7 +65,7 @@
         </div>
     </header>
 
-    <div style="margin-top: 50px;">
+    <div>
         @yield('container')
     </div>
 

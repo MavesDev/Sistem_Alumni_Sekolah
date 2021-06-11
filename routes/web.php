@@ -12,10 +12,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function () {
+    return view('beranda');
+});
 
+// daftar alumni
 Route::get('/alumnus', function () {
     return view('daftar-alumni');
 });
-Route::get('/', function () {
-    return view('beranda');
+
+// halaman informasi
+Route::get('/posting', function () {
+    return view('postingan');
 });
