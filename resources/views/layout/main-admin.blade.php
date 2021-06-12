@@ -70,7 +70,7 @@
     </div>
 
     <!-- ======= Footer ======= -->
-    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 120px;">
+    <footer id="footer" style="height: 250px; clear: both; position: relative; margin-top: 120px; z-index: -1;">
 
         <div class="footer-top" style="background-color: #1f1f1f;">
             <div class="container">
