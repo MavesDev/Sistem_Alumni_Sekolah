@@ -1,4 +1,4 @@
-@extends('layout/main')
+@extends('layout/main-admin')
 <style>
     #search {
         padding-left: 35px;
@@ -8,10 +8,6 @@
         width: 9cm;
         height: 1cm;
 
-    }
-
-    #wrapper {
-        /* background-color: #E1DFDD; */
     }
 
     /* filter button */
@@ -60,12 +56,13 @@
     #tambah-user {
         position: fixed;
         display: flex;
-        bottom: 20px;
+        bottom: 60px;
         right: 55px;
         border-radius: 50%;
         background-color: #212529;
         width: 50px;
         height: 50px;
+        border-style: none;
     }
 
 </style>
@@ -108,7 +105,7 @@
             <tbody>
                 {{-- ini hide dulu buat liat yg native --}}
                 {{-- heup --}}
-                <?php
+                {{-- <?php
                 $dbhost = 'localhost';
                 $dbuser = 'root';
                 $dbpass = '';
@@ -134,13 +131,13 @@
                         </td>";
                     echo '</tr>';
                 }
-                ?>
+                ?> --}}
 
 
 
 
                 {{-- contoh yg native --}}
-                {{-- <tr>
+                <tr>
                     <th scope="row">1112</th>
                     <td>Asep</td>
                     <td>Fullstack Developer</td>
@@ -150,16 +147,48 @@
                         <button class="btn btn-success btn-sm">Detail</button>
                         <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
                     </td>
-                </tr> --}}
+                </tr>
+                <tr>
+                    <th scope="row">1112</th>
+                    <td>Asep</td>
+                    <td>Fullstack Developer</td>
+                    <td>asepkurnia@gmail.com</td>
+                    <td>2020</td>
+                    <td>
+                        <button class="btn btn-success btn-sm">Detail</button>
+                        <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1112</th>
+                    <td>Asep</td>
+                    <td>Fullstack Developer</td>
+                    <td>asepkurnia@gmail.com</td>
+                    <td>2020</td>
+                    <td>
+                        <button class="btn btn-success btn-sm">Detail</button>
+                        <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">1112</th>
+                    <td>Asep</td>
+                    <td>Fullstack Developer</td>
+                    <td>asepkurnia@gmail.com</td>
+                    <td>2020</td>
+                    <td>
+                        <button class="btn btn-success btn-sm">Detail</button>
+                        <button class="btn btn-danger btn-sm" style="margin-left: 4px">Hapus</button>
+                    </td>
+                </tr>
 
                 
             </tbody>
         </table>
     </div>
-    <div id="tambah-user">
-        {{-- iconnya apa sy gak tau --}}
+    <button id="tambah-user">
         <i class="fa fa-user-plus position-absolute top-50 start-50 translate-middle" style="color:white"></i>
-    </div>
+    </button>
 
 
 @endsection

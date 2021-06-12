@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/alumnus', function () {
     return view('daftar-alumni');
 });
+Route::get('/alumnus-admin', function () {
+    return view('daftar-alumni-admin');
+});
 
 // halaman informasi
 Route::get('/posting', function () {
