@@ -57,7 +57,7 @@
                     <p class="mb-1" style="font-weight: 200; font-size: 48px ;">|</p>
                 </div>
                 <div style="display: block; padding: -20px 0px;">
-                    <p style="margin: 0;margin-top: 20px;font-size: 14px;">Nama profil</p>
+                    <p style="margin: 0;margin-top: 20px;font-size: 14px;">{{ Auth::User()->name }}</p>
                     <p style="font-size: 13px; color: #757575;">#723613</p>
                 </div>
                 <img src="{{asset('/img/team/unknown.png')}}" style="margin-left: 20px; width: 40px; height: 40px;border-radius: 50%; float: right;" alt="#">

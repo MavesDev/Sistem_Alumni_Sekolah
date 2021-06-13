@@ -16,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/alumnus', function () {
     return view('daftar-alumni');
 });
-Route::get('/', function () {
-    return view('beranda');
-});
+
+Route::get('/login', 'App\Http\Controllers\AuthController@login')->name('login')->middleware('guest');
+Route::get('/register', 'App\Http\Controllers\AuthController@register')->name('register')->middleware('guest');
+Route::post('/login', 'App\Http\Controllers\AuthController@postLogin')->middleware('guest');
+Route::post('/register', 'App\Http\Controllers\AuthController@postRegister')->middleware('guest');
+Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->middleware('auth')->name('logout');
+Route::get('/home', 'App\Http\Controllers\AuthController@home')->middleware('auth')->name('home');
