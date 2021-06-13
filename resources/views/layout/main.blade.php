@@ -35,17 +35,17 @@
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
-                <h1><a href="index.html" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
-                <a href="index.html"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
+                <h1><a href="/" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
+                <a href="/"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Alumni</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Post</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Galeri</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Tentang</a></li>
+                    <li><a class="nav-link scrollto active" href="/">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="../alumnus">Alumni</a></li>
+                    <li><a class="nav-link scrollto" href="../posting">Post</a></li>
+                    <li><a class="nav-link scrollto" href="#">Galeri</a></li>
+                    <li><a class="nav-link scrollto" href="#">Tentang</a></li>
                 </ul>
                 <i class="fas fa-list-ul mobile-nav-toggle"></i>
             </nav>
@@ -90,9 +90,9 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Links</h4>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Alumni</a></li>
-                            <li><a href="#">Post</a></li>
+                            <li><a href="/">Beranda</a></li>
+                            <li><a href="/alumnus">Alumni</a></li>
+                            <li><a href="/posting">Post</a></li>
                             <li><a href="#">Galeri</a></li>
                         </ul>
                     </div>
@@ -102,7 +102,6 @@
                         <ul>
                             <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
                             <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
-                            {{--FIXME ikon untuk phone dan website,saya tidak tahu apa,buka fontawesome loadingnya lama   --}}
                             <li><i class="fas fa-phone-alt"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
                             <li><i class="fas fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
                         </ul>
