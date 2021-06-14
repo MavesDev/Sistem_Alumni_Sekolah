@@ -17,6 +17,8 @@ class CreateAlumnisTable extends Migration
             $table->id();
             $table->string('alumni_name');
             $table->char('alumni_code', 8)->unique();
+            $table->char('alumni_email')->unique();
+            $table->char('alumni_last_year', 4);
             $table->string('alumni_job');
             $table->string('alumni_image')->unique();
             $table->string('alumni_desc');
