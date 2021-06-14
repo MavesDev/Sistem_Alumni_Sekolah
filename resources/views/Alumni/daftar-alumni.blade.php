@@ -99,9 +99,9 @@
                 <span>Filter</span>
                 <i class="fa fa-filter" style="padding-left: 10px"></i>
                 <div class="dropdown-content">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Aksi q</a>
+                    <a class="dropdown-item" href="#">Aksi 2</a>
+                    <a class="dropdown-item" href="#">Aksi 3</a>
                 </div>
             </div>
         </div>
@@ -131,11 +131,11 @@
                     <td>{{ $alumni->alumni_email }}</td>
                     <td>{{ $alumni->alumni_last_year }}</td>
                     <td>
-                        <a href="/alumnis/{{ $alumni->id }}/edit" class="btn btn-success btn-sm">Edit</a>
+                        <a href="/alumnis/{{ $alumni->id }}/edit" class="btn btn-success btn-sm">Ubah</a>
                         <form class="d-inline" action="/alumnis/{{ $alumni->id }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                         </form>
                     </td>
                 </tr>

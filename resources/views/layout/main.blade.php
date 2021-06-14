@@ -91,8 +91,8 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Links</h4>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Alumni</a></li>
+                            <li><a href="/home">Beranda</a></li>
+                            <li><a href="/alumnis">Alumni</a></li>
                             <li><a href="#">Post</a></li>
                             <li><a href="#">Galeri</a></li>
                         </ul>
