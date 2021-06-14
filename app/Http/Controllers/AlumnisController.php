@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gallery;
+use App\Models\Alumni;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class GallerysController extends Controller
+class AlumnisController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class GallerysController extends Controller
      */
     public function index()
     {
-        //
+        $alumnis = Alumni::paginate(10);
+
+        return view('daftar-alumni.index', compact('alumnis'));
     }
 
     /**
@@ -41,10 +44,10 @@ class GallerysController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Alumni  $alumni
      * @return \Illuminate\Http\Response
      */
-    public function show(Gallery $gallery)
+    public function show(Alumni $alumni)
     {
         //
     }
@@ -52,10 +55,10 @@ class GallerysController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Alumni  $alumni
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gallery $gallery)
+    public function edit(Alumni $alumni)
     {
         //
     }
@@ -64,10 +67,10 @@ class GallerysController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Alumni  $alumni
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gallery $gallery)
+    public function update(Request $request, Alumni $alumni)
     {
         //
     }
@@ -75,10 +78,10 @@ class GallerysController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gallery  $gallery
+     * @param  \App\Models\Alumni  $alumni
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gallery $gallery)
+    public function destroy(Alumni $alumni)
     {
         //
     }

@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Gallery extends Model
+class Alumni extends Model
 {
     use HasFactory;
+    protected $fillable = ['alumni_name', 'alumni_code', 'alumni_job', 'alumni_desc', 'alumni_image'];
 }
