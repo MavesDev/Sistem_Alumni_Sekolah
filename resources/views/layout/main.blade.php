@@ -31,7 +31,7 @@
 </head>
 
 <body>
-    <header id="header" class="fixed-top d-flex align-items-center">
+    <header id="header" class="fixed-top d-flex align-items-center" style="position: sticky; top:0;">
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
@@ -42,8 +42,8 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Alumni</a></li>
+                    <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="/alumnis">Alumni</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Post</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Galeri</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Tentang</a></li>
@@ -66,7 +66,7 @@
         </div>
     </header>
 
-    <div style="margin-top: 50px;">
+    <div>
         @yield('container')
     </div>
 
