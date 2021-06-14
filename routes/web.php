@@ -28,3 +28,6 @@ Route::get('/alumnus-admin', function () {
 Route::get('/posting', function () {
     return view('postingan');
 });
+Route::get('/buat-posting', function () {
+    return view('buat-postingan');
+});
