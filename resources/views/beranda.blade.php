@@ -4,7 +4,7 @@
 
 @section('container')
 
-<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center" style="margin-top:0px;">
     <div class="container text-center text-md-left" data-aos="fade-up">
         <h1>SMKN 1 <span>Katapang</span></h1>
         <h2>Sistem Arsip Alumni</h2>

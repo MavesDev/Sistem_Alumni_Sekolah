@@ -42,8 +42,8 @@
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
-                    <li><a class="nav-link scrollto active" href="#hero">Beranda</a></li>
-                    <li><a class="nav-link scrollto" href="#about">Alumni</a></li>
+                    <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
+                    <li><a class="nav-link scrollto" href="/alumnis">Alumni</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Post</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Galeri</a></li>
                     <li><a class="nav-link scrollto" href="#testimonials">Tentang</a></li>
@@ -91,9 +91,9 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Links</h4>
                         <ul>
-                            <li><a href="#">Beranda</a></li>
-                            <li><a href="#">Alumni</a></li>
-                            <li><a href="#">Post</a></li>
+                            <li><a href="/home">Beranda</a></li>
+                            <li><a href="/alumnis">Alumni</a></li>
+                            <li><a href="/posting">Post</a></li>
                             <li><a href="#">Galeri</a></li>
                         </ul>
                     </div>
