@@ -35,8 +35,8 @@
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
-                <h1><a href="/" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
-                <a href="/"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
+                <h1><a href="/home" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
+                <a href="/home"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">

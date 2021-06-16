@@ -70,6 +70,7 @@
         width: 50px;
         height: 50px;
         color: white;
+        border-style: none;
     }
 
     #tambah-user a {

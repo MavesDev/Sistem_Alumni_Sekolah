@@ -23,11 +23,11 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member">
-                    <img src="{{asset('/img/team/unknown.png')}}" alt="">
-                    <h4>Walter White</h4>
-                    <span>Chief Executive Officer</span>
+                    <img src="{{asset('/img/team/tim-2.jfif')}}" alt="">
+                    <h4>Satrio Dewantono</h4>
+                    <span>Game Programmer</span>
                     <p>
-                        Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                        "Kita harus merangkul rasa sakit dan membakarnya sebagai bahan bakar untuk perjalanan kita."
                     </p>
                     <div class="social">
                         <a href=""><i class="fas fa-envelope"></i></a>
@@ -39,11 +39,11 @@
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member">
-                    <img src="{{asset('/img/team/unknown.png')}}" alt="">
-                    <h4>Sarah Jhinson</h4>
-                    <span>Product Manager</span>
+                    <img src="{{asset('/img/team/tim-1.jfif')}}" alt="">
+                    <h4>Scarlet Ningsih</h4>
+                    <span>Pedagang Kaki Lima</span>
                     <p>
-                        Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                        "in a world where the big fish eat small fish and the small fish eat shrimp, we must become a poisonous shrimp".
                     </p>
                     <div class="social">
                         <a href=""><i class="fas fa-envelope"></i></a>
@@ -55,11 +55,11 @@
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member">
-                    <img src="{{asset('/img/team/unknown.png')}}" alt="">
+                    <img src="{{asset('/img/team/tim-3.jfif')}}" alt="">
                     <h4>William Anderson</h4>
-                    <span>CTO</span>
+                    <span>Project Manager</span>
                     <p>
-                        Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                        Sukses itu butuh waktu dan tangga. Kalau ada lift, selamat! Anda terlahir di komunitas 0.01%
                     </p>
                     <div class="social">
                         <a href=""><i class="fas fa-envelope"></i></a>
@@ -85,7 +85,7 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <img src="{{asset('/img/team/unknown.png')}}" class="img-fluid" alt="" style="height: 360px; width: 360px">
+                <img src="{{asset('/img/team/kepsek.jpg')}}" class="img-fluid" alt="" style="height: 360px; width: 360px">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0">
                 <h3>Tentang Kepala Sekolah</h3>
@@ -125,10 +125,10 @@
 
         <div class="row">
             <div class="col-lg-5">
-                <img src="{{asset('/img/team/music.png')}}" class="img-fluid" alt="" style="height: 360px; width: 360px; border-radius: 50%;">
+                <img src="{{asset('/img/team/music.jpg')}}" class="img-fluid" alt="" style="height: 360px; width: 360px; border-radius: 50%;">
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0">
-                <h3 class="mt-4">Acara Selanjutnya</h3>
+                <h3 class="mt-4">Bangga Jadi Orang Indonesia</h3>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
@@ -172,8 +172,8 @@
                     </figure>
 
                     <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Event 1</a></h4>
-                        <p>RPL 1 | Angkatan 2010</p>
+                        <h4><a href="portfolio-details.html">Study Tour</a></h4>
+                        <p>TKR 5 | Angkatan 19</p>
                     </div>
                 </div>
             </div>
@@ -185,8 +185,8 @@
                     </figure>
 
                     <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Event 2</a></h4>
-                        <p>Multimedia 2 | Angkatan 90-an</p>
+                        <h4><a href="portfolio-details.html">Perayaan Idul Adha</a></h4>
+                        <p>RPL 1 | Angkatan 21</p>
                     </div>
                 </div>
             </div>
@@ -198,8 +198,8 @@
                     </figure>
 
                     <div class="portfolio-info">
-                        <h4><a href="portfolio-details.html">Event 3</a></h4>
-                        <p>Kesiswaan | 2012</p>
+                        <h4><a href="portfolio-details.html">Event Semangat Januari</a></h4>
+                        <p>OSIS | Angkatan 20</p>
                     </div>
                 </div>
             </div>
