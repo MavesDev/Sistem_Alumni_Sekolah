@@ -28,6 +28,9 @@ Route::get('/alumnus-admin', function () {
 Route::get('/posting', function () {
     return view('postingan');
 });
+Route::get('/postinganu', function () {
+    return view('postinganu');
+});
 Route::get('/buat-posting', function () {
     return view('buat-postingan');
 });

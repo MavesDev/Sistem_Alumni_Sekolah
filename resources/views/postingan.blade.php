@@ -20,13 +20,15 @@
     .amico h5 {
         font-weight: bold;
     }
-    .amico p{
+
+    .amico p {
         padding-top: 15px;
     }
 
-    #gambar{
+    #gambar {
         border-radius: 20px;
     }
+
 </style>
 @section('container')
     <div style="margin: 0 35px;" class="">
@@ -40,13 +42,12 @@
 
                 <img src="{{ asset('/img/team/unknown.png') }}" alt="#"
                     style="width: 60px; height:60px; border-radius: 50%; float:left; position: relative; ">
-                <button style="float: right; border-style: none; background: none;"><i
-                        class="fa fa-ellipsis-h"></i></button>
+                <button style="float: right; border-style: none; background: none;"><i class=""></i></button>
                 <h5>Asep Kurnia</h5>
                 <h6>Angkatan 19</h6>
                 <br>
             </div>
-            <img src="{{asset('img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt="">
+            <img src="{{ asset('img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
                 dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -106,7 +107,7 @@
                 <h6>Angkatan 19</h6>
                 <br>
             </div>
-            <img src="{{asset('img/portfolio/portfolio-3.jpg')}}" class="img-fluid" alt="">
+            <img src="{{ asset('img/portfolio/portfolio-3.jpg') }}" class="img-fluid" alt="">
         </div>
         <div class="amico">
             <div class="header-amico">
