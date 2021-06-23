@@ -32,5 +32,5 @@ Route::get('/postinganu', function () {
     return view('postinganu');
 });
 Route::get('/buat-posting', function () {
-    return view('buat-postingan');
+    return view('tambah-postingan');
 });
