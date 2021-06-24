@@ -45,6 +45,13 @@ Route::get('/galeris', 'App\Http\Controllers\GalerisController@index')->middlewa
 Route::get('/galeris/create', 'App\Http\Controllers\GalerisController@create')->middleware('auth','checkLevel:admin')->name('galeris');
 Route::post('/galeris', 'App\Http\Controllers\GalerisController@store')->middleware('auth', 'checkLevel:admin')->name('galeris');
 
-
 // Search Route
 Route::get('/search', 'App\Http\Controllers\SearchController@search')->middleware('auth', 'checkLevel:admin,user')->name('search');
+
+
+
+//FIXME Postingan
+// anjir bingung saya
+// silahkan mas
+// postingan
+// tambah-postingan
