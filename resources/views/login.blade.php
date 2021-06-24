@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <section class="ftco-section" style="background-color: #4a9ad0;">
+    <section class="ftco-section" style="background-color:  #a5f4ed;">
         <div class=" container">
             <div class="row justify-content-center">
             </div>
@@ -31,7 +31,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email" required>
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
                                 @error('email')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -40,7 +40,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
                                 @error('password')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}

@@ -22,25 +22,13 @@
         display: inline-block;
         /* border: 2px solid salmon; */
         color: white;
-        background-color: #212529;
         height: 1cm;
-        border-radius: 5px;
         padding: 7px 5px;
         /* top: -29px; */
     }
 
     .dropdown a {
         color: black;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f9f9f9;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        padding: 12px 16px;
-        z-index: 1;
     }
 
     .dropdown:hover .dropdown-content {
@@ -88,55 +76,90 @@
 </style>
 
 <div class="container" style="margin-top:50px;">
-    <form action="" method="GET">
-        <div id="wrapper">
-            <i class="fa fa-search" style="position: relative; left:30px;"></i>
-            <input type="search" placeholder="Cari disini" id="search">
-            <button class="search-button">
-                <i class="fa fa-search"></i>
-            </button>
-            <div class="dropdown">
-                <span>Filter</span>
-                <i class="fa fa-filter" style="padding-left: 10px"></i>
-                <div class="dropdown-content">
-                    <a class="dropdown-item" href="#">Aksi q</a>
-                    <a class="dropdown-item" href="#">Aksi 2</a>
-                    <a class="dropdown-item" href="#">Aksi 3</a>
+    <div class="row">
+        <div class="col-10">
+            <h1 class="mt-3 mb-4 fs-1"> Daftar Alumni </h1>
+
+            <form class="input-group mb-4" action="/search" method="get">
+                <input type="search" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
+                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Search</button>
+            </form>
+
+            <div class="ml-7">
+                <div class="dropdown d-inline">
+                    <a class="btn btn-secondary dropdown-toggle bg-dark mb-3 float-start" style="color: white;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Jurusan</a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/alumnis">Semua</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_course=Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_course=Multimedia">Multimedia</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_course=Teknik Komputer Jaringan">Teknik Komputer Jaringan</a></li>
+                    </ul>
                 </div>
+
+                <div class="dropdown d-inline">
+                    <a class="btn btn-secondary dropdown-toggle bg-dark mb-3 float-start" style="color: white;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Tahun Lulus</a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/alumnis">Semua</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_last_year=2022">2022</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_last_year=2021">2021</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_last_year=2020">2020</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown d-inline">
+                    <a class="btn btn-secondary dropdown-toggle bg-dark mb-3 float-start" style="color: white;" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Angkatan</a>
+
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <li><a class="dropdown-item" href="/alumnis">Semua</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_generation=22">22</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_generation=21">21</a></li>
+                        <li><a class="dropdown-item" href="/alumnis?alumni_generation=20">20</a></li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </form>
-    <br>
+    </div>
 
-    <div class="container">
+    @if (session('status'))
+    <div class="alert alert-success mb-4">
+        {{ session('status') }}
+    </div>
+    @endif
+
+
+    <div class="mt-3">
         <h2>Daftar Alumni</h2>
-        <table class="table table-hover table-striped">
+        <table class="table table-hover table-striped text-center">
             <thead class="table table-dark">
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Pekerjaan</th>
-                    <th scope="col">email</th>
+                    <th scope="col">Domisil</th>
                     <th scope="col">Tahun Lulus</th>
                     <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody>
                 {{-- contoh yg native --}}
-                @foreach ($alumnis as $alumni)
+                @foreach ($users as $user)
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
-                    <td>{{ $alumni->alumni_name }}</td>
-                    <td>{{ $alumni->alumni_job }}</td>
-                    <td>{{ $alumni->alumni_email }}</td>
-                    <td>{{ $alumni->alumni_last_year }}</td>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->alumni_job }}</td>
+                    <td>{{ $user->alumni_domisil }}</td>
+                    <td>{{ $user->alumni_last_year }}</td>
                     <td>
-                        <a href="/alumnis/{{ $alumni->id }}/edit" class="btn btn-success btn-sm">Ubah</a>
-                        <form class="d-inline" action="/alumnis/{{ $alumni->id }}" method="post">
+                        <a href="/alumnis/{{ $user->id }}" class="btn btn-success btn-sm ">Lihat</a>
+                        @if (auth()->user()->level == "admin")
+                        <form class="d-inline" action="/alumnis/{{ $user->id }}" method="post">
                             @method('delete')
                             @csrf
                             <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
                         </form>
+                        @endif
                     </td>
                 </tr>
                 @endforeach
@@ -145,9 +168,5 @@
     </div>
 
 </div>
-
-<button id="tambah-user">
-    <a href="/alumnis/create"><i class="fa fa-user-plus position-absolute top-50 start-50 translate-middle"></i></a>
-</button>
 
 @endsection

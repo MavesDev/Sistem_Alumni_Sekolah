@@ -35,18 +35,18 @@
         <div class="container d-flex align-items-center">
 
             <div class="logo me-auto">
-                <h1><a href="index.html" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
+                <h1><a href="/home" style="position: relative; top: 5px;">SMKN 1 KATAPANG</a></h1>
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
+                <a href="/home"><img src="{{asset('/img/Logo.png')}}" style="float: left; padding-right: 15px;" alt="" class="img-fluid"></a>
             </div>
 
             <nav id="navbar" class="navbar order-last order-lg-0">
                 <ul>
                     <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="/alumnis">Alumni</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Post</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Galeri</a></li>
-                    <li><a class="nav-link scrollto" href="#testimonials">Tentang</a></li>
+                    <li><a class="nav-link scrollto" href="#">Post</a></li>
+                    <li><a class="nav-link scrollto" href="/galeris">Galeri</a></li>
+                    <li><a class="nav-link scrollto" href="/about">Tentang</a></li>
                 </ul>
                 <i class="fas fa-list-ul mobile-nav-toggle"></i>
             </nav>
@@ -58,9 +58,9 @@
                 </div>
                 <div style="display: block; padding: -20px 0px;">
                     <p style="margin: 0;margin-top: 20px;font-size: 14px;">{{ Auth::User()->name }}</p>
-                    <p style="font-size: 13px; color: #757575;">#723613</p>
+                    <p style="font-size: 13px; color: #757575;">{{ Auth::User()->alumni_code }}</p>
                 </div>
-                <img src="{{asset('/img/team/unknown.png')}}" style="margin-left: 20px; width: 40px; height: 40px;border-radius: 50%; float: right;" alt="#">
+                <a href="/alumnis/user"><img src="/img/User/Profil/{{ Auth::User()->alumni_image }}" style="margin-left: 20px; width: 40px; height: 40px;border-radius: 50%; float: right;" alt="#"></a>
             </div>
 
         </div>
@@ -94,7 +94,7 @@
                             <li><a href="/home">Beranda</a></li>
                             <li><a href="/alumnis">Alumni</a></li>
                             <li><a href="#">Post</a></li>
-                            <li><a href="#">Galeri</a></li>
+                            <li><a href="/galeris">Galeri</a></li>
                         </ul>
                     </div>
 
@@ -131,6 +131,8 @@
 
     <!-- Template Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </body>
 

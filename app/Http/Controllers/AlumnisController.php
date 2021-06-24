@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Alumni;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class AlumnisController extends Controller
@@ -15,9 +16,25 @@ class AlumnisController extends Controller
      */
     public function index()
     {
-        $alumnis = Alumni::paginate(10);
 
-        return view('Alumni.daftar-alumni', compact('alumnis'));
+        if (request()->has('alumni_course')) 
+        {
+            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->paginate(8);
+        }
+        else if (request()->has('alumni_last_year')) 
+        {
+            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->paginate(8);
+        } 
+        else if (request()->has('alumni_generation')) 
+        {
+            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->paginate(8);
+        }
+        else 
+        {
+            $users = User::paginate(8);
+        }
+
+        return view('Alumni.daftar-alumni', compact('users'));
     }
 
     /**
@@ -25,9 +42,26 @@ class AlumnisController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function profile(User $user)
     {
-        return view('Alumni.create');
+        $dataUser = [
+            'id' => Auth::user()->id,
+            'name' => Auth::user()->name,
+            'password' => Auth::user()->password,
+            'alumni_email' => Auth::user()->alumni_email,
+            'alumni_code' => Auth::user()->alumni_code,
+            'alumni_course' => Auth::user()->alumni_course,
+            'alumni_generation' => Auth::user()->alumni_generation,
+            'alumni_job' => Auth::user()->alumni_job,
+            'alumni_job_desc' => Auth::user()->alumni_job_desc,
+            'alumni_image' => Auth::user()->alumni_image,
+            'alumni_desc' => Auth::user()->alumni_desc,
+            'whatsapp' => Auth::user()->whatsapp,
+            'instagram' => Auth::user()->instagram,
+            'twitter' => Auth::user()->twitter,
+        ];
+
+        return view('Alumni.User.index', compact('user'));
     }
 
     /**
@@ -36,36 +70,11 @@ class AlumnisController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+     
     public function store(Request $request)
     {
-        $request->validate([
-            'alumni_name' => 'required',
-            'alumni_code' => 'required|size:8|unique:alumnis,alumni_code',
-            'alumni_email' => 'required',
-            'alumni_job' => 'required',
-            'alumni_last_year' => 'required|size:4',
-            'alumni_image' => 'required',
-            'alumni_desc' => 'max:500'
-        ]);
-
-        // $imgName = $request->image->getClientOriginalName() . '-' . time() . '.' . $request->image->extension();
-
-        // $request->image->move(public_path('image/Book'), $imgName);
-
-        // Book::create($request->all());
-
-
-        Alumni::create([
-            'alumni_name' => $request->alumni_name,
-            'alumni_code' => $request->alumni_code,
-            'alumni_email' => $request->alumni_email,
-            'alumni_job' => $request->alumni_job,
-            'alumni_last_year' => $request->alumni_last_year,
-            'alumni_image' => $request->alumni_image,
-            'alumni_desc' => $request->alumni_desc
-        ]);
-
-        return redirect('/alumnis')->with('status', 'Alumni ditambahkan!');
+        //
     }
 
     /**
@@ -74,65 +83,177 @@ class AlumnisController extends Controller
      * @param  \App\Models\Alumni  $alumni
      * @return \Illuminate\Http\Response
      */
-    public function show(Alumni $alumni)
+    public function show(User $user)
     {
-        //
+        return view('Alumni.show', compact('user'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Alumni  $alumni
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Alumni $alumni)
+    public function edit(User $user)
     {
-        return view('Alumni.update', compact('alumni'));
+        return view('Alumni.update', compact('user'));
+    }
+
+    public function editUser(User $user)
+    {
+        return view('Alumni.User.update', compact('user'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Alumni  $alumni
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alumni $alumni)
+    public function update(Request $request, User $user)
     {
         $request->validate([
-            'alumni_name' => 'required',
-            'alumni_code' => 'required|size:8',
-            'alumni_email' => 'required',
+            'name' => 'required',
             'alumni_job' => 'required',
             'alumni_last_year' => 'required|size:4',
-            'alumni_image' => 'required',
-            'alumni_desc' => 'max:500'
-            ]);
+            'alumni_generation' => 'required',
+            'alumni_course' => 'required',
+            'alumni_domisil' => 'required',
+        ]);
 
-        Alumni::where('id', $alumni->id)
+        if ($request->alumni_image == null) {
+            User::where('id', $user->id)
+                ->update([
+                    'name' => $request->name,
+                    'email' => $user->email,
+                    'password' => bcrypt($user->password),
+                    'alumni_code' => $user->alumni_code,
+                    'alumni_course' => $request->alumni_course,
+                    'alumni_last_year' => $request->alumni_last_year,
+                    'alumni_generation' => $request->alumni_generation,
+                    'alumni_image' => $user->alumni_image,
+                    'alumni_domisil' => $request->alumni_domisil,
+                    'alumni_job_desc' => $request->alumni_job_desc,
+                    'alumni_desc' => $request->alumni_desc,
+                    'alumni_job' => $request->alumni_job,
+                    'whatsapp' => $request->whatsapp,
+                    'instagram' => $request->instagram,
+                    'twitter' => $request->twitter
+                ]);
+
+
+
+            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+        } else {
+            $imgName = $request->alumni_image->getClientOriginalName() . '-' . time() . '.' . $request->alumni_image->extension();
+
+            $request->alumni_image->move(public_path('img/User/Profil'), $imgName);
+
+
+            User::where('id', $user->id)
+                ->update([
+                    'name' => $request->name,
+                    'email' => $user->email,
+                    'password' => bcrypt($user->password),
+                    'alumni_code' => $user->alumni_code,
+                    'alumni_course' => $request->alumni_course,
+                    'alumni_last_year' => $request->alumni_last_year,
+                    'alumni_generation' => $request->alumni_generation,
+                    'alumni_image' => $imgName,
+                    'alumni_domisil' => $request->alumni_domisil,
+                    'alumni_job_desc' => $request->alumni_job_desc,
+                    'alumni_desc' => $request->alumni_desc,
+                    'alumni_job' => $request->alumni_job,
+                    'whatsapp' => $request->whatsapp,
+                    'instagram' => $request->instagram,
+                    'twitter' => $request->twitter
+                ]);
+
+
+
+            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+        }
+    }
+
+    public function updateUser(Request $request, User $user)
+    {
+        $request->validate([
+            'name' => 'required',
+            'alumni_job' => 'required',
+            'alumni_last_year' => 'required|size:4',
+            'alumni_generation' => 'required',
+            'alumni_course' => 'required',
+            'alumni_domisil' => 'required',
+        ]);
+
+        if ($request->alumni_image == null) 
+        {
+            User::where('id', $user->id)
             ->update([
-                'alumni_name' => $request->alumni_name,
-                'alumni_code' => $alumni->alumni_code,
-                'alumni_email' => $request->alumni_email,
-                'alumni_job' => $request->alumni_job,
+                'name' => $request->name,
+                'email' => $user->email,
+                'password' => bcrypt($user->password),
+                'alumni_code' => $user->alumni_code,
+                'alumni_course' => $request->alumni_course,
                 'alumni_last_year' => $request->alumni_last_year,
-                'alumni_image' => $request->alumni_image,
+                'alumni_generation' => $request->alumni_generation,
+                'alumni_image' => $user->alumni_image,
+                'alumni_domisil' => $request->alumni_domisil,
+                'alumni_job_desc' => $request->alumni_job_desc,
                 'alumni_desc' => $request->alumni_desc,
+                'alumni_job' => $request->alumni_job,
+                'whatsapp' => $request->whatsapp,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter
             ]);
 
-            
-        return redirect('/alumnis')->with('status', 'Alumni diubah!');
+
+
+            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+        }
+
+        else 
+        {
+            $imgName = $request->alumni_image->getClientOriginalName() . '-' . time() . '.' . $request->alumni_image->extension();
+
+            $request->alumni_image->move(public_path('img/User/Profil'), $imgName);
+
+
+            User::where('id', $user->id)
+                ->update([
+                    'name' => $request->name,
+                    'email' => $user->email,
+                    'password' => bcrypt($user->password),
+                    'alumni_code' => $user->alumni_code,
+                    'alumni_course' => $request->alumni_course,
+                    'alumni_last_year' => $request->alumni_last_year,
+                    'alumni_generation' => $request->alumni_generation,
+                    'alumni_image' => $imgName,
+                    'alumni_domisil' => $request->alumni_domisil,
+                    'alumni_job_desc' => $request->alumni_job_desc,
+                    'alumni_desc' => $request->alumni_desc,
+                    'alumni_job' => $request->alumni_job,
+                    'whatsapp' => $request->whatsapp,
+                    'instagram' => $request->instagram,
+                    'twitter' => $request->twitter
+                ]);
+
+
+
+            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+        }
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Alumni  $alumni
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alumni $alumni)
+    public function destroy(User $user)
     {
-        Alumni::destroy($alumni->id);
+        User::destroy($user->id);
 
         return redirect('/alumnis')->with('status', 'Alumni Dihapus!');
     }

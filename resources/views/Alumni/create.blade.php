@@ -15,19 +15,19 @@
         @csrf
 
         <div class="mb-3 col-6">
-            <label for="alumni_name" class="form-label">Nama Alumni</label>
-            <input type="text" class="form-control @error('alumni_name') is-invalid @enderror" id="alumni_name" name="alumni_name" aria-describedby="emailHelp" placeholder="Masukan nama alumni" value="{{ old('alumni_name') }}">
-            @error('alumni_name')
+            <label for="name" class="form-">Nama Alumni</label>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" aria-describedby="emailHelp" placeholder="Masukan nama alumni" value="{{ old('name') }}">
+            @error('name')label
             <div id="invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
             </div>
             @enderror
         </div>
         <div class="mb-3 col-6">
-            <label for="alumni_code" class="form-label">Kode Alumni</label>
-            <input type="text" class="form-control @error('alumni_code') is-invalid @enderror" id="alumni_code" name="alumni_code" aria-describedby="emailHelp" placeholder="Masukan kode alumni (Tidak bisa diubah)" value="{{ old('alumni_code') }}">
-            @error('alumni_code')
-            <div id=" invalidCheck3Feedback" class="invalid-feedback">
+            <label for="password" class="form-label">Password Alumni</label>
+            <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" aria-describedby="emailHelp" placeholder="Masukan nama alumni" value="{{ old('password') }}">
+            @error('password')
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
             </div>
             @enderror
@@ -42,9 +42,45 @@
             @enderror
         </div>
         <div class="mb-3 col-6">
+            <label for="alumni_domisil" class="form-label">Domisil Alumni</label>
+            <input type="text" class="form-control @error('alumni_domisil') is-invalid @enderror" name="alumni_domisil" id="alumni_domisil" aria-describedby="emailHelp" placeholder="Masukan domisil alumni" value="{{ old('alumni_domisil') }}">
+            @error('alumni_domisil')
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-6">
+            <label for="alumni_code" class="form-label">NIS Alumni</label>
+            <input type="text" class="form-control @error('alumni_code') is-invalid @enderror" id="alumni_code" name="alumni_code" aria-describedby="emailHelp" placeholder="Masukan kode alumni (Tidak bisa diubah)" value="{{ old('alumni_code') }}">
+            @error('alumni_code')
+            <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-6">
+            <label for="alumni_course" class="form-label">Jurusan Alumni</label>
+            <input type="text" class="form-control @error('alumni_course') is-invalid @enderror" id="alumni_course" name="alumni_course" aria-describedby="emailHelp" placeholder="Masukan kode alumni (Tidak bisa diubah)" value="{{ old('alumni_course') }}">
+            @error('alumni_course')
+            <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-6">
             <label for="alumni_job" class="form-label">Pekerjaan Alumni</label>
             <input type="text" class="form-control" id="alumni_job" name="alumni_job" aria-describedby="emailHelp" placeholder="Masukan pekerjaan alumni" value="{{ old('alumni_job') }}">
             @error('alumni_job')
+            <div id=" invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-6">
+            <label for="alumni_generation" class="form-label">Angkatan Alumni</label>
+            <input type="text" class="form-control" id="alumni_generation" name="alumni_generation" aria-describedby="emailHelp" placeholder="Masukan pekerjaan alumni" value="{{ old('alumni_generation') }}">
+            @error('alumni_generation')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
             </div>
@@ -68,16 +104,6 @@
             </div>
             @enderror
         </div>
-        <div class=" mb-3 col-8">
-            <label for="alumni_desc" class="form-label">Deskripsi Alumni</label>
-            <textarea class="form-control @error('alumni_desc') is-invalid @enderror" placeholder="Deskripsi (Maksimal 500 Karakter)" name="alumni_desc" id="alumni_desc" value="{{ old('alumni_desc') }}">{{ old('alumni_desc') }}</textarea>
-            @error('alumni_desc')
-            <div id=" invalidCheck3Feedback" class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
-        </div>
-
         <button type="submit" class="btn btn-dark mt-2"> Tambah Alumni </button>
         <a href="/alumnis" class="btn btn-dark mt-2">Kembali</a>
     </form>
