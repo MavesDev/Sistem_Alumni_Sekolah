@@ -101,11 +101,10 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Kontak Kami</h4>
                         <ul>
-                            <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
-                            <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
-                            {{--FIXME ikon untuk phone dan website,saya tidak tahu apa,buka fontawesome loadingnya lama   --}}
-                            <li><i class="fas fa-phone-alt"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
-                            <li><i class="fas fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
+                            <li><i class="fas fa-phone-alt"></i> <a href="tel:022-5893-737" style="padding-left: 15px;">(022) 5893-737</a></li>
+                            <li><i class="far fa-envelope"></i> <a href="mailto:smkn1katapang@bdg.centrin.net.id" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
+                            <li><i class="fab fa-instagram"></i> <a href="https://www.instagram.com/smkn1katapangofficial/" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
+                            <li><i class="fas fa-globe"></i> <a href="http://smkn1katapang.sch.id/" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
                         </ul>
                     </div>
 

@@ -15,8 +15,8 @@
             @endif
 
             <form class="input-group mb-4" action="/search" method="get">
-                <input type="search" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
-                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Search</button>
+                <input type="search" class="form-control" placeholder="Cari Disini" aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
+                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Cari</button>
             </form>
 
             <h3 class="mt-3 mb-4 d-inline"> Filter </h3>

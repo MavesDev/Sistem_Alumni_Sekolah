@@ -81,8 +81,8 @@
             <h1 class="mt-3 mb-4 fs-1"> Daftar Alumni </h1>
 
             <form class="input-group mb-4" action="/search" method="get">
-                <input type="search" class="form-control" placeholder="Search Here" aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
-                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Search</button>
+                <input type="search" class="form-control" placeholder="Cari Disini" aria-label="Recipient's username" aria-describedby="button-addon2" name="search">
+                <button class="btn btn-outline-dark" type="submit" id="button-addon2">Cari</button>
             </form>
 
             <div class="ml-7">
@@ -130,7 +130,6 @@
 
 
     <div class="mt-3">
-        <h2>Daftar Alumni</h2>
         <table class="table table-hover table-striped text-center">
             <thead class="table table-dark">
                 <tr>

@@ -130,7 +130,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-dark mt-2"> Edit Profil! </button>
+        <button type="submit" class="btn btn-dark mt-2"> Edit Profil </button>
         <a href="/alumnis" class="btn btn-dark mt-2">Kembali</a>
     </form>
 
