@@ -44,7 +44,7 @@
                 <ul>
                     <li><a class="nav-link scrollto active" href="/home">Beranda</a></li>
                     <li><a class="nav-link scrollto" href="/alumnis">Alumni</a></li>
-                    <li><a class="nav-link scrollto" href="#">Post</a></li>
+                    <li><a class="nav-link scrollto" href="/posts">Post</a></li>
                     <li><a class="nav-link scrollto" href="/galeris">Galeri</a></li>
                     <li><a class="nav-link scrollto" href="/about">Tentang</a></li>
                 </ul>

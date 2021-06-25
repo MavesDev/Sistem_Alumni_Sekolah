@@ -45,6 +45,11 @@ Route::get('/galeris', 'App\Http\Controllers\GalerisController@index')->middlewa
 Route::get('/galeris/create', 'App\Http\Controllers\GalerisController@create')->middleware('auth','checkLevel:admin')->name('galeris');
 Route::post('/galeris', 'App\Http\Controllers\GalerisController@store')->middleware('auth', 'checkLevel:admin')->name('galeris');
 
+// Postingan
+Route::get('/posts', 'App\Http\Controllers\PostinganController@index')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::get('/posts/create', 'App\Http\Controllers\PostinganController@create')->middleware('auth', 'checkLevel:admin')->name('posts');
+Route::post('/posts', 'App\Http\Controllers\PostinganController@store')->middleware('auth', 'checkLevel:admin')->name('posts');
+Route::delete('/posts/{postingan}', 'App\Http\Controllers\PostinganController@destroy')->middleware('auth', 'checkLevel:admin')->name('posts');
 
 // Search Route
 Route::get('/search', 'App\Http\Controllers\SearchController@search')->middleware('auth', 'checkLevel:admin,user')->name('search');
