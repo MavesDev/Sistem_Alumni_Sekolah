@@ -47,9 +47,9 @@ Route::post('/galeris', 'App\Http\Controllers\GalerisController@store')->middlew
 
 // Postingan
 Route::get('/posts', 'App\Http\Controllers\PostinganController@index')->middleware('auth', 'checkLevel:admin,user')->name('posts');
-Route::get('/posts/create', 'App\Http\Controllers\PostinganController@create')->middleware('auth', 'checkLevel:admin')->name('posts');
-Route::post('/posts', 'App\Http\Controllers\PostinganController@store')->middleware('auth', 'checkLevel:admin')->name('posts');
-Route::delete('/posts/{postingan}', 'App\Http\Controllers\PostinganController@destroy')->middleware('auth', 'checkLevel:admin')->name('posts');
+Route::get('/posts/create', 'App\Http\Controllers\PostinganController@create')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::post('/posts', 'App\Http\Controllers\PostinganController@store')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::delete('/posts/{postingan}', 'App\Http\Controllers\PostinganController@destroy')->middleware('auth', 'checkLevel:admin,user')->name('posts');
 
 // Search Route
 Route::get('/search', 'App\Http\Controllers\SearchController@search')->middleware('auth', 'checkLevel:admin,user')->name('search');

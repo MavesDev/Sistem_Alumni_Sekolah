@@ -17,7 +17,7 @@ class CreatePostingansTable extends Migration
             $table->id();
             $table->string('post_name');
             $table->string('post_course');
-            $table->string('post_desc');
+            $table->text('post_desc');
             $table->string('post_image')->unique();
             $table->timestamps();
         });
