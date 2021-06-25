@@ -56,8 +56,8 @@
             </div>
             @enderror
         </div>
-        <button type="submit" class="btn btn-dark mt-2"> Tambah Foto </button>
-        <a href="/galeris" class="btn btn-dark mt-2">Kembali</a>
+        <button type="submit" class="btn btn-outline-dark mt-2"> Tambah Foto </button>
+        <a href="/galeris" class="btn btn-outline-dark mt-2">Kembali</a>
     </form>
 
 </div>

@@ -151,12 +151,12 @@
                     <td>{{ $user->alumni_domisil }}</td>
                     <td>{{ $user->alumni_last_year }}</td>
                     <td>
-                        <a href="/alumnis/{{ $user->id }}" class="btn btn-success btn-sm ">Lihat</a>
+                        <a href="/alumnis/{{ $user->id }}" class="btn btn-outline-success btn-sm ">Lihat</a>
                         @if (auth()->user()->level == "admin")
                         <form class="d-inline" action="/alumnis/{{ $user->id }}" method="post">
                             @method('delete')
                             @csrf
-                            <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                            <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
                         </form>
                         @endif
                     </td>

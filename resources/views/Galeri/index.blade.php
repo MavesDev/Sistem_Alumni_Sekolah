@@ -11,7 +11,7 @@
             <h1 class="mt-3 mb-4 fs-1 d-inline"> Galeri </h1>
 
             @if (auth()->user()->level == "admin")
-            <a href="/galeris/create" class="col-2 btn btn-dark mb-3 mr-3"> Post </a>
+            <a href="/galeris/create" class="col-2 btn btn-outline-dark mb-3 mr-3" style="width: 3cm"> Tambah </a>
             @endif
 
             <form class="input-group mb-4" action="/search" method="get">
