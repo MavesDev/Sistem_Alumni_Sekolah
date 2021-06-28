@@ -28,6 +28,10 @@
     <!-- Template Main CSS File -->
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
+    @if (auth()->user()->level == "user")
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8483ff3b-816a-4784-a30d-f03c4e5afc5d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    @endif
+
 </head>
 
 <body>
@@ -68,6 +72,8 @@
 
     <div>
         @yield('container')
+        <!-- SweetAlert -->
+        @include('sweetalert::alert')
     </div>
 
     <!-- ======= Footer ======= -->
@@ -93,7 +99,7 @@
                         <ul>
                             <li><a href="/home">Beranda</a></li>
                             <li><a href="/alumnis">Alumni</a></li>
-                            <li><a href="#">Post</a></li>
+                            <li><a href="/post">Post</a></li>
                             <li><a href="/galeris">Galeri</a></li>
                         </ul>
                     </div>
@@ -101,11 +107,18 @@
                     <div class="col-lg-2 col-md-6 footer-links">
                         <h4>Kontak Kami</h4>
                         <ul>
-                            <li><i class="far fa-envelope"></i> <a href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</a></li>
-                            <li><i class="fab fa-instagram"></i> <a href="#" style="padding-left: 15px;"> smkn1katapangofficial</a></li>
-                            {{--FIXME ikon untuk phone dan website,saya tidak tahu apa,buka fontawesome loadingnya lama   --}}
-                            <li><i class="fas fa-phone-alt"></i> <a href="#" style="padding-left: 15px;">(022) 5893-737</a></li>
-                            <li><i class="fas fa-globe"></i> <a href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</a></li>
+                            <li><i class="far fa-envelope"></i>
+                                <p href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</p>
+                            </li>
+                            <li><i class="fab fa-instagram"></i>
+                                <p href="#" style="padding-left: 15px;"> smkn1katapangofficial</p>
+                            </li>
+                            <li><i class="fas fa-phone-alt"></i>
+                                <p href="#" style="padding-left: 15px;">(022) 5893-737</p>
+                            </li>
+                            <li><i class="fas fa-globe"></i>
+                                <p href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</p>
+                            </li>
                         </ul>
                     </div>
 
@@ -117,6 +130,23 @@
             </div>
         </div>
     </footer><!-- End Footer -->
+
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+        // $(window).on("load", function() {
+        //     $(".loader-wrapper").fadeOut("slow");
+        // });
+
+    var loader = document.querySelector(".loader-wrapper");
+    window.addEventListener("load",vanish);
+    function vanish() 
+    {
+        loader.classList.add("disappear");   
+    }
+    </script>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-sort-up mt-2"></i></a>
 
@@ -132,6 +162,7 @@
     <!-- Template Main JS File -->
     <script src="{{ asset('js/main.js') }}"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </body>

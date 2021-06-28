@@ -21,7 +21,7 @@
         <div class="section-title py-4">
             <div style="position: fixed; ">
                 <a class="edit-button" href="/alumnis/{{ Auth::User()->id }}/editUser" style=" color:white; background-color:black; border-radius: 50%; float: left; margin-top: 25px; margin-left: 50px; height: 50px; width: 50px;"><span class="edit fas fa-edit" style="margin-top: 16px; margin-left: 2px;"></span></a>
-                <a class="logout-button" href="/logout" style=" color:white; background-color:crimson; border-radius: 50%; float: left; margin-top: 85px; margin-left: -50px; height: 50px; width: 50px;"><span class="fas fa-sign-out-alt" style="margin-top: 16px; margin-left: 2px;"></span></a>
+                <a class="logout-button" href="/logout" style=" color:white; background-color:black; border-radius: 50%; float: left; margin-top: 85px; margin-left: -50px; height: 50px; width: 50px;"><span class="fas fa-sign-out-alt" style="margin-top: 16px; margin-left: 2px;"></span></a>
             </div>
             <img src="/img/User/Profil/{{ Auth::User()->alumni_image }}" class="rounded-circle mx-auto d-block" alt="..." style="height: 250px; width: 250px;">
         </div>
@@ -50,52 +50,67 @@
 <div class="container" data-aos="fade-up" style="margin-top: 80px;">
 
     <section id="about" class="about">
+        <section id="services" class="services section-bg">
+            <div class="container">
 
-        <div class="row">
-            <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h3>{{ Auth::User()->name }}</h3>
-                <h5 class="mb-2">
-                    Biodata Alumni:
-                </h5>
-                <div class="row mt-4">
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Pekerjaan &nbsp:</strong> <span>{{ Auth::User()->alumni_job }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>NIS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;:</strong> <span>{{ Auth::User()->alumni_code }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Jurusan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ Auth::User()->alumni_course }}</span></li>
-                        </ul>
+                <div class="text-center mb-3">
+                    <h2>Biodata</h2>
+                </div>
+
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <div class="icon-box">
+                            <i class="fas fa-graduation-cap mt-4" style="color: black;"></i>
+                            <h4><a href="#">Jurusan</a></h4>
+                            <p>{{ Auth::User()->alumni_course }}</p>
+                        </div>
                     </div>
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Domisil &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ Auth::User()->alumni_domisil }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Angkatan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ Auth::User()->alumni_generation }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Tahun Lulus &nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ Auth::User()->alumni_last_year }}</span></li>
-                        </ul>
+                    <div class="col-md-6 mt-4 mt-lg-0">
+                        <div class="icon-box">
+                            <i class="fas fa-home mt-4" style="color: black;"></i>
+                            <h4><a href="#">Domisil</a></h4>
+                            <p>{{ Auth::User()->alumni_domisil }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <div class="icon-box">
+                            <i class="fas fa-user-graduate mt-4" style="color: black;"></i>
+                            <h4><a href="#">Tahun Lulus</a></h4>
+                            <p>{{ Auth::User()->alumni_last_year }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <div class="icon-box">
+                            <i class="fas fa-users mt-4" style="color: black;"></i>
+                            <h4><a href="#">Angkatan</a></h4>
+                            <p>{{ Auth::User()->alumni_generation }}</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-5">
+                        <h4>Ringkasan</h4>
+                    </div>
+
+                    <div class="col-md-6 mt-4">
+                        <div class="icon-box">
+                            <i class="fas fa-user-tie mt-4" style="color: black;"></i>
+                            <h4><a href="#">{{ Auth::User()->alumni_job }}</a></h4>
+                            <p>{{ Auth::User()->alumni_job_desc }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-4">
+                        <div class="icon-box">
+                            <i class="far fa-file-alt mt-4 " style="color: black;"></i>
+                            <h4><a href="#">Deskripsi</a></h4>
+                            <p>{{ Auth::User()->alumni_desc }}</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+        </section>
     </section>
 
-    <section id="resume" class="resume">
-
-        <div class="row">
-            <div class="col-lg-6">
-
-                <h3 class="resume-title">Riwayat Pekerjaan </h3>
-                <div class="">
-                    <h4>{{ Auth::User()->alumni_job }}</h4>
-                    <p>{{ Auth::User()->alumni_job_desc }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h3 class="resume-title">Deskripsi</h3>
-                <div class="">
-                    <p>{{ Auth::User()->alumni_desc }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
 </div>
 

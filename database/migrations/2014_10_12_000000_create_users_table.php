@@ -18,11 +18,11 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('level')->default('user');
-            $table->char('alumni_code', 8)->unique();
-            $table->char('alumni_generation', 2);
+            $table->char('alumni_code', 9)->unique();
+            $table->char('alumni_generation');
             $table->string('alumni_course');
             $table->string('alumni_domisil');
-            $table->char('alumni_last_year', 4);
+            $table->char('alumni_last_year');
             $table->string('alumni_job');
             $table->string('alumni_image')->unique()->default('unknown.png');
             $table->string('alumni_job_desc')->nullable()->default('-');

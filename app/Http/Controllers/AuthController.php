@@ -32,8 +32,11 @@ class AuthController extends Controller
             'email' => 'required|email',
             'password' => 'required|min:6'
         ]);
+        
+        $userEmail = strtolower($request->email);
 
-        if (!Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+        if (!Auth::attempt(['email' => $userEmail, 'password' => $request->password])) {
             return redirect()->back();
         }
 
@@ -44,10 +47,10 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'name' => 'required|min:4',
-            'email' => 'required|email',
+            'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed',
             'alumni_image' => 'required',
-            'alumni_code' => 'required|size:8',
+            'alumni_code' => 'required|size:9',
             'alumni_job' => 'required',
             'alumni_last_year' => 'required|size:4',
             'alumni_generation' => 'required',
@@ -62,7 +65,7 @@ class AuthController extends Controller
 
         User::create([
             'name' => $request->name,
-            'email' => $request->email,
+            'email' => strtolower($request->email),
             'password' => bcrypt($request->password),
             'alumni_code' => $request->alumni_code,
             'alumni_course' => $request->alumni_course,

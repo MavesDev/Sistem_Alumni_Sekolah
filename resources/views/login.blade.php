@@ -31,7 +31,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" name="email">
+                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" autocomplete="off" name="email">
                                 @error('email')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -40,17 +40,12 @@
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password">
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" autocomplete="off" name="password">
                                 @error('password')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
-                            </div>
-                            <div class="form-group d-md-flex">
-                                <div class="w-100 text-md-right">
-                                    <a href="#" style="color:  #4a9ad0;">Lupa Password?</a>
-                                </div>
                             </div>
 
                             <div class="form-group mt-4">
@@ -58,10 +53,6 @@
                             </div>
 
                             <p class="text-center" style="color: black;">Atau</p>
-
-                            <div class="form-group mt-3">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3"><i class="fab fa-google mr-2"></i> Masuk Dengan Google </button>
-                            </div>
                         </form>
 
                         <div class="w-100 text-center mt-4 text reg-link">

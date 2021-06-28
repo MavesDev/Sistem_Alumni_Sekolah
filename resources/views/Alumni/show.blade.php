@@ -50,63 +50,79 @@
 
 <div class="container" data-aos="fade-up" style="margin-top: 80px;">
 
-    <section id="about" class="about">
+    <div class="container" data-aos="fade-up" style="margin-top: 80px;">
 
-        <div class="row">
-            <div class="col-lg-8 pt-4 pt-lg-0 content">
-                <h3>{{ $user->name }}</h3>
-                <h5 class="mb-2">
-                    Biodata Alumni:
-                </h5>
-                <div class="row mt-4">
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Pekerjaan :</strong> <span>{{ $user->alumni_job }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>NIS &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;:</strong> <span>{{ $user->alumni_code }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Jurusan &nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ $user->alumni_course }}</span></li>
-                        </ul>
+        <section id="about" class="about">
+            <section id="services" class="services section-bg">
+                <div class="container">
+
+                    <div class="text-center mb-3">
+                        <h2>Biodata</h2>
                     </div>
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Domisil &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ $user->alumni_domisil }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Angkatan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ $user->alumni_generation }}</span></li>
-                            <li><i class="bi bi-chevron-right"></i> <strong>Tahun Lulus &nbsp&nbsp&nbsp&nbsp:</strong> <span>{{ $user->alumni_last_year }}</span></li>
-                        </ul>
+
+                    <div class="row text-center">
+                        <div class="col-md-6">
+                            <div class="icon-box">
+                                <i class="fas fa-graduation-cap mt-4" style="color: black;"></i>
+                                <h4><a href="#">Jurusan</a></h4>
+                                <p>{{ $user->alumni_course }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <i class="fas fa-home mt-4" style="color: black;"></i>
+                                <h4><a href="#">Domisil</a></h4>
+                                <p>{{ $user->alumni_domisil }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box">
+                                <i class="fas fa-user-graduate mt-4" style="color: black;"></i>
+                                <h4><a href="#">Tahun Lulus</a></h4>
+                                <p>{{ $user->alumni_last_year }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box">
+                                <i class="fas fa-users mt-4" style="color: black;"></i>
+                                <h4><a href="#">Angkatan</a></h4>
+                                <p>{{ $user->alumni_generation }}</p>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-5">
+                            <h4>Ringkasan</h4>
+                        </div>
+
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box">
+                                <i class="fas fa-user-tie mt-4" style="color: black;"></i>
+                                <h4><a href="#">{{ $user->alumni_job }}</a></h4>
+                                <p>{{ $user->alumni_job_desc }}</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <div class="icon-box">
+                                <i class="far fa-file-alt mt-4 " style="color: black;"></i>
+                                <h4><a href="#">Deskripsi</a></h4>
+                                <p>{{ $user->alumni_desc }}</p>
+                            </div>
+                        </div>
                     </div>
+
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="resume" class="resume">
-
-        <div class="row">
-            <div class="col-lg-6">
-
-                <h3 class="resume-title">Riwayat Pekerjaan </h3>
-                <div class="">
-                    <h4>{{ $user->alumni_job }}</h4>
-                    <p>{{ $user->alumni_job_desc }}</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h3 class="resume-title">Deskripsi</h3>
-                <div class="">
-                    <p>{{ $user->alumni_desc }}</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-</div>
-
-<div class="section-title" style="padding:0px; margin-top: 45px;">
-    <div style="padding-top: 20px;">
-        <h2>Kontak</h2>
+            </section>
+        </section>
     </div>
 </div>
 
-<!-- <div class="container">
+    <div class="section-title" style="padding:0px; margin-top: 45px;">
+        <div style="padding-top: 20px;">
+            <h2>Kontak</h2>
+        </div>
+    </div>
+
+    <!-- <div class="container">
     <div class="text-center d-inline">
         <div class="text-center" style="display: inline-block; margin: 0px 20px; text-align: center;">
             <i class="fas fa-envelope" style="font-size: 128px;"></i>
@@ -122,7 +138,7 @@
         </div>
     </div>
 </div> -->
-<!-- 
+    <!-- 
 <div class="container">
     <div class="py-5">
         <div class="text-center mt-5">
@@ -144,33 +160,33 @@
     </div>
 </div> -->
 
-<div class="container" style="margin-top: 60px;">
-    <div class="card-group">
-        <div class="card mx-6">
-            <i class="card-img-top fas fa-envelope text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-            <div class="card-body">
-                <h5 class="card-title text-center mt-2">{{ $user->email }}</h5>
+    <div class="container" style="margin-top: 60px;">
+        <div class="card-group">
+            <div class="card mx-6">
+                <i class="card-img-top fas fa-envelope text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center mt-2">{{ $user->email }}</h5>
+                </div>
             </div>
-        </div>
-        <div class="card mx-2">
-            <i class="card-img-top fab fa-whatsapp text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-            <div class="card-body">
-                <h5 class="card-title text-center mt-2">{{ $user->whatsapp }}</h5>
+            <div class="card mx-2">
+                <i class="card-img-top fab fa-whatsapp text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center mt-2">{{ $user->whatsapp }}</h5>
+                </div>
             </div>
-        </div>
-        <div class="card mx-2">
-            <i class="card-img-top fab fa-instagram text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-            <div class="card-body">
-                <h5 class="card-title text-center mt-2">{{ $user->instagram }}</h5>
+            <div class="card mx-2">
+                <i class="card-img-top fab fa-instagram text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center mt-2">{{ $user->instagram }}</h5>
+                </div>
             </div>
-        </div>
-        <div class="card mx-2">
-            <i class="card-img-top fab fa-twitter text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-            <div class="card-body">
-                <h5 class="card-title text-center mt-2">{{ $user->twitter }}</h5>
+            <div class="card mx-2">
+                <i class="card-img-top fab fa-twitter text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+                <div class="card-body">
+                    <h5 class="card-title text-center mt-2">{{ $user->twitter }}</h5>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-@endsection
+    @endsection

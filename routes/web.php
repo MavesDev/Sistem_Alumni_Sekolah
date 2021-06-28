@@ -30,6 +30,7 @@ Route::post('/home/{beranda}/editEvent', 'App\Http\Controllers\BerandaController
 
 // Alumnis
 Route::get('/alumnis', 'App\Http\Controllers\AlumnisController@index')->middleware('auth', 'checkLevel:admin,user')->name('alumnis');
+Route::get('/alumnis/search', 'App\Http\Controllers\AlumnisController@search')->middleware('auth', 'checkLevel:admin,user')->name('alumnis');
 Route::get('/alumnis/create', 'App\Http\Controllers\AlumnisController@create')->middleware('auth','checkLevel:admin')->name('alumnis');
 Route::get('/alumnis/user', 'App\Http\Controllers\AlumnisController@profile')->middleware('auth', 'checkLevel:admin,user')->name('alumnis');
 Route::get('/alumnis/{user}', 'App\Http\Controllers\AlumnisController@show')->middleware('auth', 'checkLevel:admin,user')->name('alumnis');
@@ -44,12 +45,16 @@ Route::patch('/alumnis/{user}', 'App\Http\Controllers\AlumnisController@update')
 Route::get('/galeris', 'App\Http\Controllers\GalerisController@index')->middleware('auth', 'checkLevel:admin,user')->name('galeris');
 Route::get('/galeris/create', 'App\Http\Controllers\GalerisController@create')->middleware('auth','checkLevel:admin')->name('galeris');
 Route::post('/galeris', 'App\Http\Controllers\GalerisController@store')->middleware('auth', 'checkLevel:admin')->name('galeris');
+Route::delete('/galeris/{galeri}', 'App\Http\Controllers\GalerisController@destroy')->middleware('auth', 'checkLevel:admin')->name('alumnis');
 
 // Postingan
 Route::get('/posts', 'App\Http\Controllers\PostinganController@index')->middleware('auth', 'checkLevel:admin,user')->name('posts');
-Route::get('/posts/create', 'App\Http\Controllers\PostinganController@create')->middleware('auth', 'checkLevel:admin')->name('posts');
-Route::post('/posts', 'App\Http\Controllers\PostinganController@store')->middleware('auth', 'checkLevel:admin')->name('posts');
-Route::delete('/posts/{postingan}', 'App\Http\Controllers\PostinganController@destroy')->middleware('auth', 'checkLevel:admin')->name('posts');
+Route::get('/posts/search', 'App\Http\Controllers\PostinganController@search')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::get('/posts/create', 'App\Http\Controllers\PostinganController@create')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::get('/posts/{postingan}', 'App\Http\Controllers\PostinganController@show')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::post('/posts', 'App\Http\Controllers\PostinganController@store')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::delete('/posts/{postingan}', 'App\Http\Controllers\PostinganController@destroy')->middleware('auth', 'checkLevel:admin,user')->name('posts');
+Route::patch('/posts/{postingan}', 'App\Http\Controllers\PostinganController@update')->middleware('auth', 'checkLevel:admin,user')->name('posts');
 
 // Search Route
 Route::get('/search', 'App\Http\Controllers\SearchController@search')->middleware('auth', 'checkLevel:admin,user')->name('search');

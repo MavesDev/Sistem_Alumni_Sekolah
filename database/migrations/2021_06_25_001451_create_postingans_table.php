@@ -16,9 +16,14 @@ class CreatePostingansTable extends Migration
         Schema::create('postingans', function (Blueprint $table) {
             $table->id();
             $table->string('post_name');
+            $table->string('post_author');
+            $table->string('post_author_id');
+            $table->string('post_author_image');
+            $table->string('post_author_job');
             $table->string('post_course');
-            $table->string('post_desc');
-            $table->string('post_image')->unique();
+            $table->string('post_category');
+            $table->text('post_desc');
+            $table->string('post_image')->unique()->nullable();
             $table->timestamps();
         });
     }

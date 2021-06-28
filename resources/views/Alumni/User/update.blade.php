@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-10">
-            <h1 class="mb-4 fs-1"> Edit Profil </h1>
+            <h1 class="mt-5 mb-4 fs-1"> Edit Profil </h1>
         </div>
     </div>
 
@@ -35,13 +35,21 @@
             @enderror
         </div>
         <div class="mb-3 col-6">
-            <label for="alumni_course" class="form-label">Jurusan Anda</label>
-            <input type="text" class="form-control @error('alumni_course') is-invalid @enderror" id="alumni_course" name="alumni_course" aria-describedby="emailHelp" placeholder="Masukan jurusan anda" value="{{ $user->alumni_course }}">
-            @error('alumni_course')
-            <div id=" invalidCheck3Feedback" class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
+            <label for="exampleInputPassword1" class="form-label">Jurusan Postingan</label>
+            <select class="form-select" name="alumni_course" aria-label="Default select example">
+                @if (auth()->user()->level == "admin")
+                <option value="-" selected>-</option>
+                @endif
+                <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                <option value="Multimedia">Multimedia</option>
+                <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
+                <option value="Tekstil">Tekstil</option>
+                <option value="Elektronika">Elektronika</option>
+                <option value="Mekatronika">Mekatronika</option>
+                <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
+                <option value="Mesin">Mesin</option>
+                <option value="Teknik Gambar Mesin">Teknik Gambar Mesin</option>
+            </select>
         </div>
         <div class="mb-3 col-6">
             <label for="alumni_job" class="form-label">Pekerjaan Anda</label>
@@ -62,22 +70,45 @@
             @enderror
         </div>
         <div class="mb-3 col-6">
-            <label for="alumni_generation" class="form-label">Angkatan Lulus</label>
-            <input type="text" class="form-control" id="alumni_generation" name="alumni_generation" aria-describedby="emailHelp" placeholder="Masukan angkatan lulus anda" value="{{ $user->alumni_generation }}">
-            @error('alumni_generation')
-            <div id=" invalidCheck3Feedback" class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
+            <label for="exampleInputEmail1" class="form-label">Angkatan</label>
+            <select class="form-select" name="alumni_generation" aria-label="Default select example">
+                @if (auth()->user()->level == "admin")
+                <option value="--" selected>-</option>
+                @endif
+                <option value="21">21</option>
+                <option value="20">20</option>
+                <option value="19">19</option>
+                <option value="18">18</option>
+                <option value="17">17</option>
+                <option value="16">16</option>
+                <option value="15">15</option>
+                <option value="14">14</option>
+                <option value="13">13</option>
+                <option value="12">12</option>
+                <option value="11">11</option>
+                <option value="Dibawah Angkatan Ke-10">Dibawah Angkatan Ke-10</option>
+            </select>
         </div>
         <div class="mb-3 col-6">
-            <label for="alumni_last_year" class="form-label">Tahun Lulus</label>
-            <input type="text" class="form-control" id="alumni_last_year" name="alumni_last_year" aria-describedby="emailHelp" placeholder="Masukan tahun lulus" value="{{ $user->alumni_last_year }}">
-            @error('alumni_last_year')
-            <div id=" invalidCheck3Feedback" class="invalid-feedback">
-                {{ $message }}
-            </div>
-            @enderror
+            <label for="exampleInputEmail1" class="form-label">Tahun Lulus</label>
+            <select class="form-select" name="alumni_last_year" aria-label="Default select example">
+                @if (auth()->user()->level == "admin")
+                <option value="----" selected>-</option>
+                @endif
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+                <option value="2019">2019</option>
+                <option value="2018">2018</option>
+                <option value="2017">2017</option>
+                <option value="2016">2016</option>
+                <option value="2015">2015</option>
+                <option value="2014">2014</option>
+                <option value="2013">2013</option>
+                <option value="2012">2012</option>
+                <option value="2011">2011</option>
+                <option value="Sebelum 2010">Sebelum 2010</option>
+            </select>
         </div>
         <div class="mb-3 col-6">
             <label for="alumni_image" class="form-label">Foto</label>
@@ -130,8 +161,8 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-dark mt-2"> Edit Profil! </button>
-        <a href="/alumnis" class="btn btn-dark mt-2">Kembali</a>
+        <button type="submit" class="btn btn-outline-dark mt-2"><i class="fas fa-edit"></i> Edit Profil! </button>
+        <a href="/alumnis" class="btn btn-outline-dark mt-2"><i class="fas fa-arrow-circle-left"></i> Kembali</a>
     </form>
 
 </div>

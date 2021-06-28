@@ -19,19 +19,22 @@ class AlumnisController extends Controller
 
         if (request()->has('alumni_course')) 
         {
-            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->paginate(8);
+            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(8);
         }
         else if (request()->has('alumni_last_year')) 
         {
-            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->paginate(8);
+            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(8);
         } 
         else if (request()->has('alumni_generation')) 
         {
-            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->paginate(8);
+            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(8);
+        }
+        else if (request()->has('search')) {
+            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(8);
         }
         else 
         {
-            $users = User::paginate(8);
+            $users = User::orderby('created_at', 'desc')->simplePaginate(8);
         }
 
         return view('Alumni.daftar-alumni', compact('users'));
@@ -144,7 +147,7 @@ class AlumnisController extends Controller
 
 
 
-            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+            return redirect('/alumnis')->with('toast_success', 'Alumni Sukses Diubah!');
         } else {
             $imgName = $request->alumni_image->getClientOriginalName() . '-' . time() . '.' . $request->alumni_image->extension();
 
@@ -172,7 +175,7 @@ class AlumnisController extends Controller
 
 
 
-            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+            return redirect('/alumnis')->with('toast_success', 'Alumni Sukses Diubah!');
         }
     }
 
@@ -210,9 +213,8 @@ class AlumnisController extends Controller
 
 
 
-            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+            return redirect('/alumnis')->with('toast_success', 'Alumni Sukses Diubah!');
         }
-
         else 
         {
             $imgName = $request->alumni_image->getClientOriginalName() . '-' . time() . '.' . $request->alumni_image->extension();
@@ -241,7 +243,7 @@ class AlumnisController extends Controller
 
 
 
-            return redirect('/alumnis')->with('status', 'Alumni diubah!');
+            return redirect('/alumnis')->with('toast_success', 'Alumni Sukses Diubah!!');
         }
     }
 
@@ -255,6 +257,20 @@ class AlumnisController extends Controller
     {
         User::destroy($user->id);
 
-        return redirect('/alumnis')->with('status', 'Alumni Dihapus!');
+        return redirect('/alumnis')->with('toast_warning', 'Alumni Dihapus!');
+    }
+
+    public function search()
+    {
+
+        if (request()->has('search')) {
+            $user = User::where('name', 'like', '%' . request('search') . '%')->paginate(8);
+        } else {
+            $user = User::paginate(8);
+        }
+
+        $users = $user;
+
+        return view('Alumni.daftar-alumni', compact('users'));
     }
 }

@@ -14,17 +14,142 @@ body {
 }
 
 a {
-  color: #a5f4ed;
+  color: #444444;
   text-decoration: none;
 }
 
 a:hover {
-  color: #5faee3;
+  color: #444444;
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+/*--------------------------------------------------------------
+# Loader
+--------------------------------------------------------------*/
+
+.loader-wrapper{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.loader
+{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  border: 4px solid #444444;
+  animation: loader 2s infinite ease;
+}
+
+.loader-inner
+{
+  vertical-align: text-top;
+  display: inline-block;
+  width: 100%;
+  background-color: #444444;
+  animation: loader-inner 2s infinite ease;
+}
+
+.disappear
+{
+  animation: vanish 1s forwards;
+}
+
+@keyframes vanish
+{
+  100%
+  {
+    opacity: 0;
+    visibility: hidden;
+  }
+  75%
+  {
+    opacity: 25%;
+    visibility: visible;
+  }
+  50%
+  {
+    opacity: 50%;
+    visibility: visible;
+  }
+  25%
+  {
+    opacity: 100%;
+    visibility: visible;
+  }
+  0%
+  {
+    opacity: 100%;
+    visibility: visible;
+  }
+}
+
+@keyframes loader 
+{
+  0%
+  {
+    transform: rotate(0deg);
+  }  
+
+  25%
+  {
+    transform: rotate(180deg);
+  }  
+
+  50%
+  {
+    transform: rotate(180deg);
+  }  
+
+  75%
+  {
+    transform: rotate(360deg);
+  }  
+
+  100%
+  {
+    transform: rotate(360deg);
+  }  
+}
+
+
+@keyframes loader-inner 
+{
+  0%
+  {
+    height: 0%;
+  }  
+
+  25%
+  {
+    height: 0%;
+  }  
+
+  50%
+  {
+    height: 100%;
+  }  
+
+  75%
+  {
+    height: 100%;
+  }  
+
+  100%
+  {
+    height: 0%;
+  }  
 }
 
 /*--------------------------------------------------------------
@@ -34,10 +159,10 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   visibility: hidden;
   opacity: 0;
-  right: 15px;
-  bottom: 15px;
+  left: 40px;
+  bottom: 40px;
   z-index: 996;
-  background: #5faee3;
+  background: #2e968d;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -1442,6 +1567,21 @@ section {
 
 #footer .footer-top .footer-links ul li:first-child {
   padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul li i {
+  color: #a5f4ed;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 0;
+  margin-top: -12px;
+}
+
+#footer .footer-top .footer-links ul li p {
+  color: white;
+  transition: 0.3s;
+  display: inline-block;
+  line-height: 0;
 }
 
 #footer .footer-top .footer-links ul a {

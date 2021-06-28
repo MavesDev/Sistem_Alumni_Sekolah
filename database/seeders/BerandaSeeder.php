@@ -17,10 +17,10 @@ class BerandaSeeder extends Seeder
         Beranda::create([
             'headMaster_name' => 'Nama Kepala Sekolah',
             'headMaster_image' => 'unknown.png',
-            'headMaster_desc' => 'Ini bagian Deskripsi',
+            'headMaster_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
             'event_name' => 'Judul Acara',
             'event_image' => 'music.png',
-            'event_desc' => 'Ini bagian Deskripsi',
+            'event_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
         ]);
     }
 }

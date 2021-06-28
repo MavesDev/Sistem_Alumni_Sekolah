@@ -16,13 +16,16 @@ class GalerisController extends Controller
     {
 
         if (request()->has('galeri_course')) {
-            $galeris = Galeri::where('galeri_course', 'like', '%' . request('galeri_course') . '%')->paginate(8);
+            $galeris = Galeri::where('galeri_course', 'like', '%' . request('galeri_course') . '%')->simplePaginate(10);
         } else if (request()->has('galeri_last_year')) {
-            $galeris = Galeri::where('galeri_last_year', 'like', '%' . request('galeri_last_year') . '%')->paginate(8);
+            $galeris = Galeri::where('galeri_last_year', 'like', '%' . request('galeri_last_year') . '%')->simplePaginate(10);
         } else if (request()->has('galeri_generation')) {
-            $galeris = Galeri::where('galeri_generation', 'like', '%' . request('galeri_generation') . '%')->paginate(8);
+            $galeris = Galeri::where('galeri_generation', 'like', '%' . request('galeri_generation') . '%')->simplePaginate(10);
+        }
+        if (request()->has('search')) {
+            $galeris = Galeri::where('galeri_name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(10);
         } else {
-            $galeris = Galeri::paginate(8);
+            $galeris = Galeri::simplePaginate(10);
         }
 
         return view('Galeri.index', compact('galeris'));
@@ -67,7 +70,7 @@ class GalerisController extends Controller
             'galeri_last_year' => $request->galeri_last_year
         ]);
 
-        return redirect('/galeris')->with('status', 'Foto ditambahkan!');
+        return redirect('/galeris')->with('toast_success', 'Foto Sukses Diunggah!');
     }
 
     /**
@@ -112,6 +115,8 @@ class GalerisController extends Controller
      */
     public function destroy(Galeri $galeri)
     {
-        //
+        Galeri::destroy($galeri->id);
+
+        return redirect('/galeris')->with('toast_warning', 'Foto Dihapus!');
     }
 }

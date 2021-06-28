@@ -19,8 +19,8 @@ class CreateBerandasTable extends Migration
             $table->string('event_name')->nullable()->default('Nama Acara');
             $table->string('headMaster_image')->unique()->nullable()->default('music.png');
             $table->string('event_image')->unique()->nullable()->default('music.png');
-            $table->string('headMaster_desc')->default('-')->nullable();
-            $table->string('event_desc')->default('-')->nullable();
+            $table->text('headMaster_desc')->default('-')->nullable();
+            $table->text('event_desc')->default('-')->nullable();
             $table->timestamps();
         });
     }

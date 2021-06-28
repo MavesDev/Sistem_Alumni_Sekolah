@@ -12,7 +12,12 @@ class Postingan extends Model
 
     protected $fillable = [
         'post_name',
+        'post_author',
+        'post_author_id',
+        'post_author_image',
+        'post_author_job',
         'post_course',
+        'post_category',
         'post_desc',
         'post_image'
     ];
