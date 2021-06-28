@@ -45,8 +45,8 @@
             <input type="file" id="inputJudul" name="post_image" class="form-control" maxlength="200" style="width: 12cm;"> </input>
             <br><br>
 
-            <button class="btn btn-dark mt-2">Posting</button>
-            <a href="/posts" class="btn btn-dark mt-2">Kembali</a>
+            <button class="btn btn-outline-dark mt-2">Posting</button>
+            <a href="/posts" class="btn btn-outline-dark mt-2">Kembali</a>
 
         </div>
 

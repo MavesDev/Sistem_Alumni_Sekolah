@@ -161,7 +161,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-outline-dark mt-2"><i class="fas fa-edit"></i> Edit Profil! </button>
+        <button type="submit" class="btn btn-outline-dark mt-2"><i class="fas fa-edit"></i> Edit Profil </button>
         <a href="/alumnis" class="btn btn-outline-dark mt-2"><i class="fas fa-arrow-circle-left"></i> Kembali</a>
     </form>
 

@@ -1,5 +1,12 @@
 <!doctype html>
 <html lang="en">
+{{-- 
+    akun admin:
+    astaga kehapus
+
+    adminMale@Gmail.com
+    adminmale478 
+--}}
 
 <head>
     <title>Login | SMKN 1 Katapang</title>

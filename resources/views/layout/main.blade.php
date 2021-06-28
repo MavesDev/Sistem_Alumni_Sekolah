@@ -108,16 +108,16 @@
                         <h4>Kontak Kami</h4>
                         <ul>
                             <li><i class="far fa-envelope"></i>
-                                <p href="#" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</p>
+                                <p href="mailto:smkn1katapang@bdg.centrin.net.id" style="padding-left: 15px;">smkn1katapang@bdg.centrin.net.id</p>
                             </li>
                             <li><i class="fab fa-instagram"></i>
-                                <p href="#" style="padding-left: 15px;"> smkn1katapangofficial</p>
+                                <p href="https://www.instagram.com/smkn1katapangofficial/" style="padding-left: 15px;"> smkn1katapangofficial</p>
                             </li>
                             <li><i class="fas fa-phone-alt"></i>
-                                <p href="#" style="padding-left: 15px;">(022) 5893-737</p>
+                                <p href="tel:022-5893-737" style="padding-left: 15px;">(022) 5893-737</p>
                             </li>
                             <li><i class="fas fa-globe"></i>
-                                <p href="#" style="padding-left: 15px;">http://smkn1katapang.sch.id/</p>
+                                <p href="http://smkn1katapang.sch.id/" style="padding-left: 15px;">http://smkn1katapang.sch.id/</p>
                             </li>
                         </ul>
                     </div>
