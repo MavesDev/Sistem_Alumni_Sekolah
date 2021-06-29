@@ -4,94 +4,97 @@
 
 @section('container')
 
-<style>
-    #search {
-        padding-left: 35px;
-        background-color: #E1DFDD;
-        border: none;
-        border-radius: 5px;
-        width: 9cm;
-        height: 1cm;
+    <style>
+        #search {
+            padding-left: 35px;
+            background-color: #E1DFDD;
+            border: none;
+            border-radius: 5px;
+            width: 9cm;
+            height: 1cm;
 
-    }
+        }
 
 
-    /* filter button */
-    .dropdown {
-        position: relative;
-        display: inline-block;
-        /* border: 2px solid salmon; */
-        color: white;
-        height: 1cm;
-        padding: 7px 5px;
-        /* top: -29px; */
-    }
+        /* filter button */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            /* border: 2px solid salmon; */
+            color: white;
+            height: 1cm;
+            padding: 7px 5px;
+            /* top: -29px; */
+        }
 
-    .dropdown a {
-        color: black;
-    }
+        .dropdown a {
+            color: black;
+        }
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
 
-    /* search button */
-    .search-button {
-        margin-left: 10px;
-        margin-right: 5px;
-        height: 1cm;
-        width: 1.5cm;
-        background-color: #212529;
-        color: white;
-        border-style: none;
-        border-radius: 5px;
-    }
+        /* search button */
+        .search-button {
+            margin-left: 10px;
+            margin-right: 5px;
+            height: 1cm;
+            width: 1.5cm;
+            background-color: #212529;
+            color: white;
+            border-style: none;
+            border-radius: 5px;
+        }
 
-    #tambah-user {
-        position: fixed;
-        display: flex;
-        z-index: 999;
-        bottom: 80px;
-        right: 130px;
-        border-radius: 50%;
-        background-color: #212529;
-        width: 50px;
-        height: 50px;
-        color: white;
-    }
+        #tambah-user {
+            position: fixed;
+            display: flex;
+            z-index: 999;
+            bottom: 80px;
+            right: 130px;
+            border-radius: 50%;
+            background-color: #212529;
+            width: 50px;
+            height: 50px;
+            color: white;
+        }
 
-    #tambah-user a {
-        color: white;
-    }
+        #tambah-user a {
+            color: white;
+        }
 
-    #tambah-user a:hover {
-        color: black;
-    }
+        #tambah-user a:hover {
+            color: black;
+        }
 
-    #tambah-user:hover {
-        background-color: white;
-        color: black;
-        transition: ease 0.2s;
-    }
-</style>
+        #tambah-user:hover {
+            background-color: white;
+            color: black;
+            transition: ease 0.2s;
+        }
 
-<div class="container" style="margin-top:30px;">
-    <div style="margin: auto; width: 70rem" class="">
+    </style>
+
+    <div class="containerr" style="margin:30px 1cm;">
         <br>
         <h2 style="color: black;">Daftar Kelas</h2>
-        <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter"> Filter</i></button>
+        <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter">
+                Filter</i></button>
         <div style="float: right;">
             <form action="/alumnis" method="get" style="float: right; display: inline;">
-                <input type="text" name="search" class="col-8 btn btn-outline-dark" placeholder="  Cari" style="padding: 6px 0px; text-align:left;">
-                <button data-bs-toggle="modal" class="btn btn-outline-dark" style="float: right;"><i class="fas fa-search"> Cari</i></button>
+                <input type="text" name="search" class="col-8 btn btn-outline-dark" placeholder="  Cari"
+                    style="padding: 6px 0px; text-align:left;">
+                <button data-bs-toggle="modal" class="btn btn-outline-dark" style="float: right;"><i class="fas fa-search">
+                        Cari</i></button>
             </form>
         </div>
         <br><br>
 
         @if (session('status'))
-        <div class="alert alert-success mb-4">
-            {{ session('status') }}
-        </div>
+            <div class="alert alert-success mb-4">
+                {{ session('status') }}
+            </div>
         @endif
 
         <!-- Pop up Filter -->
@@ -161,7 +164,8 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"> Kembali</i></button>
+                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i
+                                    class="fas fa-arrow-circle-left"> Kembali</i></button>
                             <button type="submit" class="btn btn-outline-dark"><i class="fas fa-filter"> Filter</i></button>
                         </div>
                     </form>
@@ -186,23 +190,23 @@
                 <tbody>
                     {{-- contoh yg native --}}
                     @foreach ($users as $user)
-                    <tr>
-                        <th scope="row">{{ $loop->iteration }}</th>
-                        <td>{{ $user->name }}</td>
-                        <td>{{ $user->alumni_job }}</td>
-                        <td>{{ $user->alumni_domisil }}</td>
-                        <td>{{ $user->alumni_last_year }}</td>
-                        <td>
-                            <a href="/alumnis/{{ $user->id }}" class="btn btn-outline-success btn-sm ">Lihat</a>
-                            @if (auth()->user()->level == "admin")
-                            <form class="d-inline" action="/alumnis/{{ $user->id }}" method="post">
-                                @method('delete')
-                                @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
-                            </form>
-                            @endif
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->alumni_job }}</td>
+                            <td>{{ $user->alumni_domisil }}</td>
+                            <td>{{ $user->alumni_last_year }}</td>
+                            <td>
+                                <a href="/alumnis/{{ $user->id }}" class="btn btn-outline-success btn-sm ">Lihat</a>
+                                @if (auth()->user()->level == 'admin')
+                                    <form class="d-inline" action="/alumnis/{{ $user->id }}" method="post">
+                                        @method('delete')
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger btn-sm">Hapus</button>
+                                    </form>
+                                @endif
+                            </td>
+                        </tr>
                     @endforeach
                 </tbody>
             </table>
@@ -211,8 +215,6 @@
         <div class="mt-5" style="color: black;">
             {{ $users->links() }}
         </div>
-
     </div>
-</div>
 
 @endsection
