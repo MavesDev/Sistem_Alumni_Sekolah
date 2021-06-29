@@ -20,6 +20,18 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'alumni_code',
+        'alumni_last_year',
+        'alumni_generation',
+        'alumni_image',
+        'alumni_course',
+        'alumni_domisil',
+        'alumni_desc',
+        'alumni_job_desc',
+        'alumni_job',
+        'whatsapp',
+        'instagram',
+        'twitter'
     ];
 
     /**
