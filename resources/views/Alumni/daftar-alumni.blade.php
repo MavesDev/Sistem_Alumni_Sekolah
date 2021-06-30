@@ -78,7 +78,7 @@
 <div style="margin: 30px 1cm;">
     <div>
         <br>
-        <h2 style="color: black;">Daftar Kelas</h2>
+        <h2 style="color: black;">Daftar Alumni</h2>
         <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter"> Filter</i></button>
         <div style="float: right;">
             <form action="/alumnis" method="get" style="float: right; display: inline;">
@@ -171,7 +171,6 @@
         </div>
 
         <div class="mt-3">
-            <h2>Daftar Alumni</h2>
             <table class="table table-hover table-striped text-center">
                 <thead class="table table-dark">
                     <tr>
@@ -208,8 +207,94 @@
             </table>
         </div>
 
-        <div class="mt-5" style="color: black;">
-            {{ $users->links() }}
+        <div class="d-inline">
+            <div class="mt-5" style="color: black;">
+                {{ $users->links() }}
+            </div>
+            @if (auth()->user()->level == "admin")
+            <button data-bs-toggle="modal" data-bs-target="#Report" class="btn btn-outline-dark float-end"><i class="fas fa-print"> Cetak</i></button>
+            @endif
+        </div>
+
+        <!-- Pop up Report -->
+        <div class="modal fade" id="Report" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cetak Alumni</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <form action="/alumnis/report" method="get" target="_black">
+                        @csrf
+
+                        <div class="mb-3" style="display: none;">
+                            <label for="exampleInputEmail1" class="form-label">Level</label>
+                            <input type="text" value="user" name="level">
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Jurusan Alumni</label>
+                                <select class="form-select" name="alumni_course" aria-label="Default select example">
+                                    <option value="" selected>Semua Jurusan</option>
+                                    <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                                    <option value="Multimedia">Multimedia</option>
+                                    <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
+                                    <option value="Tekstil">Tekstil</option>
+                                    <option value="Elektronika">Elektronika</option>
+                                    <option value="Mekatronika">Mekatronika</option>
+                                    <option value="Teknik Kendaraan Ringan">Teknik Kendaraan Ringan</option>
+                                    <option value="Mesin">Mesin</option>
+                                    <option value="Teknik Gambar Mesin">Teknik Gambar Mesin</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Tahun Lulus</label>
+                                <select class="form-select" name="alumni_last_year" aria-label="Default select example">
+                                    <option value="" selected>Seluruh Tahun</option>
+                                    <option value="2022">2022</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="Sebelum 2010">Sebelum 2010</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Angkatan</label>
+                                <select class="form-select" name="alumni_generation" aria-label="Default select example">
+                                    <option value="" selected>Semua Angkatan</option>
+                                    <option value="21">21</option>
+                                    <option value="20">20</option>
+                                    <option value="19">19</option>
+                                    <option value="18">18</option>
+                                    <option value="17">17</option>
+                                    <option value="16">16</option>
+                                    <option value="15">15</option>
+                                    <option value="14">14</option>
+                                    <option value="13">13</option>
+                                    <option value="12">12</option>
+                                    <option value="11">11</option>
+                                    <option value="Dibawah Angkatan Ke-10">Dibawah Angkatan Ke-10</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"> Kembali</i></button>
+                            <button type="submit" class="btn btn-outline-dark"><i class="fas fa-print"> Cetak</i></button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
         </div>
 
     </div>

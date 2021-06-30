@@ -19,22 +19,22 @@ class AlumnisController extends Controller
 
         if (request()->has('alumni_course')) 
         {
-            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(8);
+            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(3);
         }
         else if (request()->has('alumni_last_year')) 
         {
-            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(8);
+            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(3);
         } 
         else if (request()->has('alumni_generation')) 
         {
-            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(8);
+            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
         }
         else if (request()->has('search')) {
-            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(8);
+            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
         }
         else 
         {
-            $users = User::orderby('created_at', 'desc')->simplePaginate(8);
+            $users = User::orderby('created_at', 'desc')->simplePaginate(3);
         }
 
         return view('Alumni.daftar-alumni', compact('users'));
@@ -260,6 +260,32 @@ class AlumnisController extends Controller
         return redirect('/alumnis')->with('toast_warning', 'Alumni Dihapus!');
     }
 
+    public function report()
+    {
+
+        if (request()->has('alumni_course')) {
+            $users = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')->orderby('created_at', 'desc')->get();
+            $userss = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
+        } else if (request()->has('alumni_last_year')) {
+            $users = User::where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')->orderby('created_at', 'desc')->get();
+            $userss = User::where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
+        } else if (request()->has('alumni_generation')) {
+            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->get();
+            $userss = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
+        } else if (request()->has('level')) {
+            $users = User::where('level', 'like', '%' . request('level') . '%')->orderby('created_at', 'desc')->get();
+        } else {
+            $users = User::orderby('created_at', 'desc')->get();
+        }
+
+        return view('Alumni.report', compact('users','userss'));
+    }
+
+    public function print(User $user)
+    {
+        return view('Alumni.User.report', compact('user'));
+    }
+
     public function search()
     {
 
@@ -274,3 +300,4 @@ class AlumnisController extends Controller
         return view('Alumni.daftar-alumni', compact('users'));
     }
 }
+

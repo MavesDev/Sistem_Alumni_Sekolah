@@ -21,7 +21,8 @@
         <div class="section-title py-4">
             <div style="position: fixed; ">
                 @if (auth()->user()->level == "admin")
-                <a class="edit-button" href="/alumnis/{{( $user->id )}}/edit" style=" color:white; background-color:black; border-radius: 50%; float: left; margin-top: 25px; margin-left: 50px; height: 50px; width: 50px;"><span class="edit fas fa-edit" style="margin-top: 16px; margin-left: 2px;"></span></a>
+                <a class="edit-button" href="/alumnis/{{ $user->id }}/edit" style=" color:white; background-color:black; border-radius: 50%; float: left; margin-top: 25px; margin-left: 50px; height: 50px; width: 50px;"><span class="edit fas fa-edit" style="margin-top: 16px; margin-left: 2px;"></span></a>
+                <a class="print-button" href="/alumnis/{{ $user->id }}/print" target="_blank" style=" color:white; background-color:black; border-radius: 50%; float: left; margin-top: 85px; margin-left: -50px; height: 50px; width: 50px;"><span class="fas fa-print" style="margin-top: 16px; margin-left: 2px;"></span></a>
                 @endif
             </div>
             <img src="/img/User/Profil/{{ $user->alumni_image }}" class="rounded-circle mx-auto d-block" alt="..." style="height: 250px; width: 250px;">
@@ -116,13 +117,13 @@
     </div>
 </div>
 
-    <div class="section-title" style="padding:0px; margin-top: 45px;">
-        <div style="padding-top: 20px;">
-            <h2>Kontak</h2>
-        </div>
+<div class="section-title" style="padding:0px; margin-top: 45px;">
+    <div style="padding-top: 20px;">
+        <h2>Kontak</h2>
     </div>
+</div>
 
-    <!-- <div class="container">
+<!-- <div class="container">
     <div class="text-center d-inline">
         <div class="text-center" style="display: inline-block; margin: 0px 20px; text-align: center;">
             <i class="fas fa-envelope" style="font-size: 128px;"></i>
@@ -138,7 +139,7 @@
         </div>
     </div>
 </div> -->
-    <!-- 
+<!-- 
 <div class="container">
     <div class="py-5">
         <div class="text-center mt-5">
@@ -160,33 +161,33 @@
     </div>
 </div> -->
 
-    <div class="container" style="margin-top: 60px;">
-        <div class="card-group card-mobile">
-            <div class="card mx-6 card-mobile">
-                <i class="card-img-top fas fa-envelope text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-                <div class="card-body">
-                    <h5 class="card-title text-center mt-2">{{ $user->email }}</h5>
-                </div>
+<div class="container" style="margin-top: 60px;">
+    <div class="card-group card-mobile">
+        <div class="card mx-6 card-mobile">
+            <i class="card-img-top fas fa-envelope text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+            <div class="card-body">
+                <h5 class="card-title text-center mt-2">{{ $user->email }}</h5>
             </div>
-            <div class="card mx-2 card-mobile">
-                <i class="card-img-top fab fa-whatsapp text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-                <div class="card-body">
-                    <h5 class="card-title text-center mt-2">{{ $user->whatsapp }}</h5>
-                </div>
+        </div>
+        <div class="card mx-2 card-mobile">
+            <i class="card-img-top fab fa-whatsapp text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+            <div class="card-body">
+                <h5 class="card-title text-center mt-2">{{ $user->whatsapp }}</h5>
             </div>
-            <div class="card mx-2 card-mobile">
-                <i class="card-img-top fab fa-instagram text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-                <div class="card-body">
-                    <h5 class="card-title text-center mt-2">{{ $user->instagram }}</h5>
-                </div>
+        </div>
+        <div class="card mx-2 card-mobile">
+            <i class="card-img-top fab fa-instagram text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+            <div class="card-body">
+                <h5 class="card-title text-center mt-2">{{ $user->instagram }}</h5>
             </div>
-            <div class="card mx-2 card-mobile">
-                <i class="card-img-top fab fa-twitter text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
-                <div class="card-body">
-                    <h5 class="card-title text-center mt-2">{{ $user->twitter }}</h5>
-                </div>
+        </div>
+        <div class="card mx-2 card-mobile">
+            <i class="card-img-top fab fa-twitter text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
+            <div class="card-body">
+                <h5 class="card-title text-center mt-2">{{ $user->twitter }}</h5>
             </div>
         </div>
     </div>
+</div>
 
-    @endsection
+@endsection

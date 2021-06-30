@@ -9,7 +9,7 @@
     <div class="row">
         <div style="margin: auto; width: 70rem" class="">
             <br>
-            <h3>Galeri</h3>
+            <h2>Galeri</h2>
             @if (auth()->user()->level == "admin")
             <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark"><i class="fas fa-plus"> Tambah Foto</i></button>
             @endif

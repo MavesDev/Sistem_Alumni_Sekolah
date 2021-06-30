@@ -9,7 +9,7 @@
 --}}
 
 <head>
-    <title>Login | SMKN 1 Katapang</title>
+    <title>Reset Password | SMKN 1 Katapang</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -33,8 +33,8 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-color: #5faee3; border-radius: 50%; color: black;">
                             <i class="far fa-user" style="font-size: 70px; margin-right: 1px;"></i>
                         </div>
-                        <h3 class="text-center mb-4" style="color: black;">Masuk Ke Akun Anda</h3>
-                        <form action="/login" method="post" class="login-form">
+                        <h3 class="text-center mb-4" style="color: black;">Masukan Email Anda</h3>
+                        <form action="/reset" method="post" class="login-form">
                             @csrf
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
@@ -45,31 +45,11 @@
                                 </div>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
-                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" autocomplete="off" name="password">
-                                @error('password')
-                                <div id="invalidCheck3Feedback" class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            <div class="form-group d-md-flex">
-                                <div class="w-100 text-md-left  mb-2">
-                                    <a href="/reset" style="color:  #4a9ad0;">Lupa Password?</a>
-                                </div>
-                            </div>
 
                             <div class="form-group mt-4">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Masuk</button>
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Konfirmasi Email</button>
                             </div>
-
-                            <p class="text-center" style="color: black;">Atau</p>
                         </form>
-
-                        <div class="w-100 text-center mt-4 text reg-link">
-                            <p class="mb-0" style="color: black;">Tidak Punya Akun?<a href="/register" class="ml-2" style="color: #4a9ad0; border-bottom: 1px solid #4a9ad0">DAFTAR</a></p>
-                        </div>
                     </div>
                 </div>
             </div>
