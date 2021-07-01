@@ -16,7 +16,6 @@ class AlumnisController extends Controller
      */
     public function index()
     {
-
         if (request()->has('alumni_course')) 
         {
             $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(3);

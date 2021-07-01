@@ -18,7 +18,7 @@ Route::get('/register', 'App\Http\Controllers\AuthController@register')->name('r
 Route::get('/reset', 'App\Http\Controllers\AuthController@forgot')->name('reset')->middleware('guest');
 Route::post('/login', 'App\Http\Controllers\AuthController@postLogin')->middleware('guest');
 Route::post('/register', 'App\Http\Controllers\AuthController@postRegister')->middleware('guest');
-Route::post('/reset', 'App\Http\Controllers\AuthController@reset')->name('reset')->middleware('guest');
+Route::post('/reset', 'App\Http\Controllers\AuthController@validatePasswordRequest')->name('reset')->middleware('guest');
 Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->middleware('auth')->name('logout');
 Route::get('/about', 'App\Http\Controllers\AuthController@about')->middleware('auth', 'checkLevel:admin,user')->name('about');
 

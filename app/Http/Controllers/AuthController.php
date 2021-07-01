@@ -7,6 +7,7 @@ use App\Models\Beranda;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
@@ -85,34 +86,15 @@ class AuthController extends Controller
         return view("reset");
     }
 
-    // public function reset(Request $request)
-    // {
-    //     $user = User::whereEmail($request->email->first());
+    public function validatePasswordRequest()
+    {
+        
+    }
 
-    //     if (count($user) == 0) 
-    //     {
-    //         return redirect()->back()->with(['error'=> 'Email not exist']);
-    //     }
-
-    //     $user = Sentinel::findById($user->id);
-    //     $reminder = Reminder::exist($user) ? : Reminder::create($user);
-    //     $this->sendEmail($user, $reminder->code);
-
-    //     return redirect()->back()->with(['success' => 'Reset Code Send To Your Gmail']);
-    // }
-
-    // public function sendEmail($user, $code)
-    // {
-    //     Mail::send(
-    //         'email.forgot',
-    //         ['user' => $user, 'code' => $code],
-    //         function($message)  use ($user)
-    //         {
-    //             $message->to($user->email);
-    //             $message->subject("Hello $user->name", "Reset your password.")
-    //         }
-    //     );
-    // }
+    private function sendResetEmail($email, $token)
+    {
+        
+    }
 
     public function logout()
     {
