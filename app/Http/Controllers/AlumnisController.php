@@ -17,20 +17,14 @@ class AlumnisController extends Controller
     public function index()
     {
 
-        if (request()->has('alumni_course')) 
+        if (request()->has('alumni_course') && request()->has('alumni_last_year') && request()->has('alumni_generation')) 
         {
-            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(3);
-        }
-        else if (request()->has('alumni_last_year')) 
-        {
-            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(3);
-        } 
-        else if (request()->has('alumni_generation')) 
-        {
-            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
-        }
-        else if (request()->has('search')) {
-            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')
+            ->where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')
+            ->where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')
+            ->where('name', 'like', '%' . request('search') . '%')
+            ->orderby('created_at', 'desc')
+            ->simplePaginate(3);
         }
         else 
         {
@@ -262,23 +256,16 @@ class AlumnisController extends Controller
 
     public function report()
     {
-
-        if (request()->has('alumni_course')) {
-            $users = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')->orderby('created_at', 'desc')->get();
-            $userss = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
-        } else if (request()->has('alumni_last_year')) {
-            $users = User::where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')->orderby('created_at', 'desc')->get();
-            $userss = User::where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
-        } else if (request()->has('alumni_generation')) {
-            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->get();
-            $userss = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(1);
-        } else if (request()->has('level')) {
-            $users = User::where('level', 'like', '%' . request('level') . '%')->orderby('created_at', 'desc')->get();
-        } else {
-            $users = User::orderby('created_at', 'desc')->get();
+        if (request()->has('alumni_course') && request()->has('alumni_last_year') && request()->has('alumni_generation')) {
+            $users = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')
+            ->where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')
+            ->where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')
+            ->where('name', 'like', '%' . request('search') . '%')
+            ->orderby('created_at', 'desc')
+            ->simplePaginate(3);
         }
 
-        return view('Alumni.report', compact('users','userss'));
+        return view('Alumni.report', compact('users'));
     }
 
     public function print(User $user)

@@ -15,16 +15,20 @@ class GalerisController extends Controller
     public function index()
     {
 
-        if (request()->has('galeri_course')) {
-            $galeris = Galeri::where('galeri_course', 'like', '%' . request('galeri_course') . '%')->simplePaginate(10);
-        } else if (request()->has('galeri_last_year')) {
-            $galeris = Galeri::where('galeri_last_year', 'like', '%' . request('galeri_last_year') . '%')->simplePaginate(10);
-        } else if (request()->has('galeri_generation')) {
-            $galeris = Galeri::where('galeri_generation', 'like', '%' . request('galeri_generation') . '%')->simplePaginate(10);
+        if (request()->has('galeri_course') && request()->has('galeri_last_year') && request()->has('galeri_generation')) 
+        {
+            $users = Galeri::where('galeri_course', 'like', '%' . request('galeri_course') . '%')
+            ->where('galeri_last_year', 'like', '%' . request('galeri_last_year') . '%')
+            ->where('galeri_generation', 'like', '%' . request('galeri_generation') . '%')
+            ->where('name', 'like', '%' . request('search') . '%')
+            ->orderby('created_at', 'desc')
+            ->simplePaginate(3);
         }
-        else if (request()->has('search')) {
+        else if (request()->has('search')) 
+        {
             $galeris = Galeri::where('galeri_name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(10);
-        } else {
+        } else 
+        {
             $galeris = Galeri::simplePaginate(10);
         }
 

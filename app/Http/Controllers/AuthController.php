@@ -82,7 +82,7 @@ class AuthController extends Controller
 
     public function forgot()
     {
-        return view("reset");
+        return view("Auth.reset");
     }
 
     // public function reset(Request $request)

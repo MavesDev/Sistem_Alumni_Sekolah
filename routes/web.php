@@ -18,9 +18,14 @@ Route::get('/register', 'App\Http\Controllers\AuthController@register')->name('r
 Route::get('/reset', 'App\Http\Controllers\AuthController@forgot')->name('reset')->middleware('guest');
 Route::post('/login', 'App\Http\Controllers\AuthController@postLogin')->middleware('guest');
 Route::post('/register', 'App\Http\Controllers\AuthController@postRegister')->middleware('guest');
-Route::post('/reset', 'App\Http\Controllers\AuthController@reset')->name('reset')->middleware('guest');
+Route::get('/password/email', 'App\Http\Controllers\ResetController@ConfirmEmail')->name('reset')->middleware('guest');
 Route::get('/logout', 'App\Http\Controllers\AuthController@logout')->middleware('auth')->name('logout');
 Route::get('/about', 'App\Http\Controllers\AuthController@about')->middleware('auth', 'checkLevel:admin,user')->name('about');
+
+// Auth
+Route::get('/password/{user}/update', 'App\Http\Controllers\ResetController@edit')->name('reset')->middleware('guest');
+Route::post('/password/{user}/update', 'App\Http\Controllers\ResetController@update')->name('reset')->middleware('guest');
+
 
 // Beranda
 Route::get('/home', 'App\Http\Controllers\BerandaController@home')->middleware('auth', 'checkLevel:admin,user')->name('home');
@@ -61,3 +66,7 @@ Route::patch('/posts/{postingan}', 'App\Http\Controllers\PostinganController@upd
 
 // Search Route
 Route::get('/search', 'App\Http\Controllers\SearchController@search')->middleware('auth', 'checkLevel:admin,user')->name('search');
+
+// Email
+Route::get('/email/{user}', 'App\Http\Controllers\EmailController@create');
+Route::post('/email', 'App\Http\Controllers\EmailController@sendEmail')->name('send.email');
