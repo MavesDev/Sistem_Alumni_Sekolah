@@ -35,7 +35,7 @@
             @enderror
         </div>
         <div class="mb-3 col-7">
-            <label for="exampleInputPassword1" class="form-label">Jurusan Postingan</label>
+            <label for="exampleInputPassword1" class="form-label">Jurusan</label>
             <select class="form-select" name="alumni_course" aria-label="Default select example">
                 @if (auth()->user()->level == "admin")
                 <option value="-" selected>-</option>

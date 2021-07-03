@@ -40,7 +40,7 @@
     </div>
 
     <div class="container pt-4">
-        <p style="font-family: serif; color: black; font-size: 18px;">Kepala sekolah SNK Negeri 1 Katapang menerangkan bahwa :</p>
+        <p style="font-family: serif; color: black; font-size: 18px;">Kepala sekolah SMK Negeri 1 Katapang menerangkan bahwa :</p>
         <ul>
             <li>
                 <p style="font-family: serif; color: black; font-size: 14px;">Nama &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp; : {{ $user->name }}</p>
