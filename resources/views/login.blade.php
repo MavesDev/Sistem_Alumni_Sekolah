@@ -54,6 +54,13 @@
                                 </div>
                                 @enderror
                             </div>
+                            
+                            <div class="form-group d-md-flex">
+                                <div class="w-100 text-md-left  mb-2">
+                                    <a href="/reset" style="color:  #4a9ad0;">Lupa Password?</a>
+                                </div>
+                            </div>
+
 
                             <div class="form-group mt-4">
                                 <button type="submit" class="btn form-control btn-primary rounded submit px-3">Masuk</button>
