@@ -56,6 +56,7 @@ class PostinganController extends Controller
         $request->validate([
             'post_name' => 'required',
             'post_course' => 'required',
+            'post_image' => 'required|mimes:jpeg,jpg,png',
             'post_category' => 'required',
         ]);
         // Book::create($request->all());

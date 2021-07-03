@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Landing Page
+Route::get('/', 'App\Http\Controllers\AuthController@landing')->middleware('guest');
 Route::get('/login', 'App\Http\Controllers\AuthController@login')->name('login')->middleware('guest');
 Route::get('/register', 'App\Http\Controllers\AuthController@register')->name('register')->middleware('guest');
 Route::get('/reset', 'App\Http\Controllers\AuthController@forgot')->name('reset')->middleware('guest');

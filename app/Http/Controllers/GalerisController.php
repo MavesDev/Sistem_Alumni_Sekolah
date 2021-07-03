@@ -55,7 +55,7 @@ class GalerisController extends Controller
     {
         $request->validate([
             'galeri_name' => 'required',
-            'galeri_image' => 'required',
+            'galeri_image' => 'required|mimes:jpeg,jpg,png',
             'galeri_course' => 'required',
             'galeri_last_year' => 'required'
         ]);

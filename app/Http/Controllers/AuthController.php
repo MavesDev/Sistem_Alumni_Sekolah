@@ -50,7 +50,7 @@ class AuthController extends Controller
             'name' => 'required|min:4',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed',
-            'alumni_image' => 'required',
+            'alumni_image' => 'required|mimes:jpeg,jpg,png',
             'alumni_code' => 'required|size:9',
             'alumni_job' => 'required',
             'alumni_last_year' => 'required|size:4',
@@ -119,5 +119,10 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect("/login");
+    }
+
+    public function landing()
+    {
+        return view("landing");
     }
 }
