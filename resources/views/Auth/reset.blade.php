@@ -15,18 +15,13 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
 </head>
 
-<body>
-    <section class="ftco-section" style="background-color:  #a5f4ed;">
+<body style="background-color:  #a5f4ed;">
+    <section class="ftco-section">
         <div class=" container">
-            <div class="row justify-content-center">
-            </div>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-6">
                     <div class="login-wrap py-5" style="background-color: #fff;">
-                        <div class="img d-flex align-items-center justify-content-center" style="background-color: #5faee3; border-radius: 50%; color: black;">
-                            <i class="far fa-user" style="font-size: 70px; margin-right: 1px;"></i>
-                        </div>
-                        <h3 class="text-center mb-4" style="color: black;">Masukan Email Anda</h3>
+                        <h3 class="text-center mb-4" style="color: black;">Masukkan Email Anda</h3>
                         <form action="/password/email" method="get" class="login-form">
                             @csrf
 
@@ -47,7 +42,7 @@
                             </div>
 
                             <div class="form-group mt-4">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Kirim link password</button>
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Kirim link verifikasi</button>
                             </div>
                         </form>
                     </div>
