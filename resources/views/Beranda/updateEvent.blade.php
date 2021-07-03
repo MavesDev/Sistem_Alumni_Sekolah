@@ -34,7 +34,7 @@
         </div>
         <div class=" mb-3 col-8">
             <label for="event_desc" class="form-label">Deskripsi</label>
-            <textarea class="form-control @error('event_desc') is-invalid @enderror" placeholder="Tambahkan deskripsi acara" name="event_desc" id="event_desc" value="{{ old('event_desc') }}">{{ $beranda->event_desc }}</textarea>
+            <textarea style="height: 5cm; resize: none" class="form-control @error('event_desc') is-invalid @enderror" placeholder="Tambahkan deskripsi acara" name="event_desc" id="event_desc" value="{{ old('event_desc') }}">{{ $beranda->event_desc }}</textarea>
             @error('event_desc')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -42,7 +42,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-dark mt-2"> Edit Acara! </button>
+        <button type="submit" class="btn btn-dark mt-2"> Edit Acara </button>
         <a href="/alumnis" class="btn btn-dark mt-2">Kembali</a>
     </form>
 

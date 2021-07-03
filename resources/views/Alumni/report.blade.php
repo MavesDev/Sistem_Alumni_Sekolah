@@ -46,12 +46,6 @@
             <li>
                 <p style="font-family: serif; color: black; font-size: 14px;">Jurusan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp; : {{ $data->alumni_course }}</p>
             </li>
-            <li>
-                <p style="font-family: serif; color: black; font-size: 14px;">Tahun Lulus &nbsp;: {{ $data->alumni_last_year }}</p>
-            </li>
-            <li>
-                <p style="font-family: serif; color: black; font-size: 14px;">Angkatan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;: {{ $data->alumni_generation }}</p>
-            </li>
         </ul>
         @endforeach
     </div>

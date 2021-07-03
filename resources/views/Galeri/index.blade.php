@@ -15,7 +15,7 @@
             @endif
             <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter"> Filter</i></button>
             <div style="float: right;">
-                <form action="/galeris" method="get" style="float: right; display: inline;">
+                <form autocomplete="off" action="/galeris" method="get" style="float: right; display: inline;">
                     <input type="text" name="search" class="col-8 btn btn-outline-dark" placeholder="  Cari" style="padding: 6px 0px; text-align:left;">
                     <button data-bs-toggle="modal" class="btn btn-outline-dark" style="float: right;"><i class="fas fa-search"> Cari</i></button>
                 </form>
@@ -44,7 +44,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Judul Foto</label>
-                                <input type="text" class="form-control @error('galeri_name') is-invalid @enderror" name="galeri_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input autocomplete="off" type="text" class="form-control @error('galeri_name') is-invalid @enderror" name="galeri_name" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 @error('galeri_name')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -207,7 +207,7 @@
                 </div>
 
                 <div class="text-center mt-5">
-                    <a href="https://drive.google.com" class="text-center" style="font-size: 18px; color: black; border-bottom: solid 2px black;">Lihat Semua Galeri</a>
+                    <a href="https://drive.google.com/drive/folders/1uMMjycnIHARTFjdrS4s2bI0H5drSadhJ?usp=sharing" class="text-center" style="font-size: 18px; color: black; border-bottom: solid 2px black;">Lihat Semua Galeri</a>
                 </div>
 
             </div>

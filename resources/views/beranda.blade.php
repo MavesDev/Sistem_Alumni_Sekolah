@@ -69,7 +69,7 @@
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3>{{ $beranda->headMaster_name }}</h3>
-                        <p>
+                        <p style="white-space: pre-line">
                             {{ $beranda->headMaster_desc }}
                         </p>
                     </div>
@@ -99,13 +99,14 @@
                 <div class="row">
                     <div class="col-lg-5">
                         <img src="/img/Postingan/Beranda/{{ $beranda->event_image }}" class="img-fluid event-mobile" alt=""
-                            style="height: 360px; width: 360px; border-radius: 50%;">
+                            style="height: 360px; width: 360px; padding: 10px">
                     </div>
                     <div class="col-lg-6 pt-4 pt-lg-0">
                         <h3 class="mt-4">{{ $beranda->event_name }}</h3>
-                        <p>
+                        <p style="white-space: pre-line">
                             {{ $beranda->event_desc }}
                         </p>
+                        <a href="/img/Postingan/Beranda/{{ $beranda->event_image }}" download="poster_sekolah.jpg" class="btn btn-secondary btn-sm">Download Poster</a>
                     </div>
                 </div>
             @endforeach

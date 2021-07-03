@@ -18,7 +18,7 @@
 
         <div class="mb-3 col-7">
             <label for="name" class="form-label">Nama Anda</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" aria-describedby="emailHelp" placeholder="Masukan nama anda" value="{{ $user->name }}">
+            <input autocomplete="off" type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" aria-describedby="emailHelp" placeholder="Masukan nama anda" value="{{ $user->name }}">
             @error('name')
             <div id="invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -27,7 +27,7 @@
         </div>
         <div class="mb-3 col-7">
             <label for="alumni_domisil" class="form-label">Domisili Anda</label>
-            <input type="text" class="form-control @error('alumni_domisil') is-invalid @enderror" id="alumni_domisil" name="alumni_domisil" aria-describedby="emailHelp" placeholder="Masukan domisili anda" value="{{ $user->alumni_domisil }}">
+            <input autocomplete="off" type="text" class="form-control @error('alumni_domisil') is-invalid @enderror" id="alumni_domisil" name="alumni_domisil" aria-describedby="emailHelp" placeholder="Masukan domisili anda" value="{{ $user->alumni_domisil }}">
             @error('alumni_domisil')
             <div id="invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -53,7 +53,7 @@
         </div>
         <div class="mb-3 col-7">
             <label for="alumni_job" class="form-label">Pekerjaan Anda</label>
-            <input type="text" class="form-control" id="alumni_job" name="alumni_job" aria-describedby="emailHelp" placeholder="Masukan pekerjaan anda" value="{{ $user->alumni_job }}">
+            <input autocomplete="off" type="text" class="form-control" id="alumni_job" name="alumni_job" aria-describedby="emailHelp" placeholder="Masukan pekerjaan anda" value="{{ $user->alumni_job }}">
             @error('alumni_job')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -62,7 +62,7 @@
         </div>
         <div class=" mb-3 col-8">
             <label for="alumni_job_desc" class="form-label">Deskripsi Pekerjaan</label>
-            <textarea class="form-control @error('alumni_job_desc') is-invalid @enderror" placeholder="Masukan deskripsi pekerjaan anda" name="alumni_job_desc" id="alumni_job_desc" value="{{ $user->alumni_job_desc }}">{{ $user->alumni_job_desc }}</textarea>
+            <textarea autocomplete="off" style="height: 3cm; resize: none" class="form-control @error('alumni_job_desc') is-invalid @enderror" placeholder="Masukan deskripsi pekerjaan anda" name="alumni_job_desc" id="alumni_job_desc" value="{{ $user->alumni_job_desc }}">{{ $user->alumni_job_desc }}</textarea>
             @error('alumni_job_desc')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -112,7 +112,7 @@
         </div>
         <div class="mb-3 col-7">
             <label for="alumni_image" class="form-label">Foto</label>
-            <input type="file" class="form-control" id="alumni_image" name="alumni_image" aria-describedby="emailHelp" placeholder="Pilih Foto" value="{{ $user->alumni_image }}">
+            <input autocomplete="off" type="file" class="form-control" id="alumni_image" name="alumni_image" aria-describedby="emailHelp" placeholder="Pilih Foto" value="{{ $user->alumni_image }}">
             @error('alumni_image')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -121,7 +121,7 @@
         </div>
         <div class=" mb-3 col-8">
             <label for="alumni_desc" class="form-label">Deskripsi</label>
-            <textarea class="form-control @error('alumni_desc') is-invalid @enderror" placeholder="Tambahkan Desripsi Anda" name="alumni_desc" id="alumni_desc" value="{{ old('alumni_desc') }}">{{ $user->alumni_desc }}</textarea>
+            <textarea autocomplete="off" style="height: 3cm; resize: none" class="form-control @error('alumni_desc') is-invalid @enderror" placeholder="Tambahkan Desripsi Anda" name="alumni_desc" id="alumni_desc" value="{{ old('alumni_desc') }}">{{ $user->alumni_desc }}</textarea>
             @error('alumni_desc')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -135,7 +135,7 @@
 
         <div class="mb-3 col-7">
             <label for="whatsapp" class="form-label">Whatsapp</label>
-            <input type="text" class="form-control" id="whatsapp" name="whatsapp" aria-describedby="emailHelp" placeholder="Whatsapp" value="{{ $user->whatsapp }}">
+            <input autocomplete="off" type="text" class="form-control" id="whatsapp" name="whatsapp" aria-describedby="emailHelp" placeholder="Whatsapp" value="{{ $user->whatsapp }}">
             @error('whatsapp')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -144,7 +144,7 @@
         </div>
         <div class="mb-3 col-7">
             <label for="instagram" class="form-label">Instagram</label>
-            <input type="text" class="form-control" id="instagram" name="instagram" aria-describedby="emailHelp" placeholder="Instagram" value="{{ $user->instagram }}">
+            <input autocomplete="off" type="text" class="form-control" id="instagram" name="instagram" aria-describedby="emailHelp" placeholder="Instagram" value="{{ $user->instagram }}">
             @error('instagram')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}
@@ -153,7 +153,7 @@
         </div>
         <div class="mb-3 col-7">
             <label for="twitter" class="form-label">Twitter</label>
-            <input type="text" class="form-control" id="twitter" name="twitter" aria-describedby="emailHelp" placeholder="Twitter" value="{{ $user->twitter }}">
+            <input autocomplete="off" type="text" class="form-control" id="twitter" name="twitter" aria-describedby="emailHelp" placeholder="Twitter" value="{{ $user->twitter }}">
             @error('twitter')
             <div id=" invalidCheck3Feedback" class="invalid-feedback">
                 {{ $message }}

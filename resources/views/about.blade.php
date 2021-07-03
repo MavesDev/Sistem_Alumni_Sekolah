@@ -23,44 +23,37 @@
     <div class="container">
 
       <div class="text-center pb-4">
-        <h2>Tujuan</h2>
-        <p>Tujuan pembuatan dari website ini</p>
+        <h2>Fungsi</h2>
+        <p>Fungsi website sistem arsip alumni,antara lain: </p>
       </div>
 
       <div class="row">
         <div class="col-md-6">
           <div class="icon-box">
             <i class="fas fa-database mt-4" style="color: black;"></i>
-            <h4><a href="#">Kumpulan Data Arsip Alumni</a></h4>
-            <p>Bertujuan menyimpan semua data dari alumni setiap jurusan, agar sekolah mengetahui bagaimana keadaan dari setiap alumni</p>
+            <h4>Kumpulan Data Arsip Alumni</h4>
+            <p>Berfungsi menyimpan semua data dari alumni setiap jurusan, agar sekolah mengetahui bagaimana keadaan dari setiap alumni</p>
           </div>
         </div>
         <div class="col-md-6 mt-4 mt-lg-0">
           <div class="icon-box">
             <i class="far fa-newspaper mt-4" style="color: black;"></i>
-            <h4><a href="#">Postingan</a></h4>
-            <p>Sebagai tempat berkumpulnya semua informasi, para alumni bisa saling berkomunikasi dan memberikan informasi dari mulai acara hingga lowongan pekerjaan dapat disimpan disini.</p>
+            <h4>Postingan</h4>
+            <p>Sebagai tempat berkumpulnya semua informasi, para alumni bisa saling berkomunikasi dan memberikan informasi dari mulai acara hingga lowongan pekerjaan dapat diunggah disini.</p>
           </div>
         </div>
         <div class="col-md-6 mt-4">
           <div class="icon-box">
             <i class="far fa-image mt-4" style="color: black;"></i>
-            <h4><a href="#">Galeri</a></h4>
-            <p>Memberikan kumpulan foto - foto dari acara di sekolah, dari setiap jurusan, angkatan ataaupun tahun lulus akan diberikan cuplikan foto sebagai kenangan.</p>
-          </div>
-        </div>
-        <div class="col-md-6 mt-4">
-          <div class="icon-box">
-            <i class="fab fa-connectdevelop mt-4" style="color: black;"></i>
-            <h4><a href="#">Menguhubungkan Koneksi Sekolah ke Alumni</a></h4>
-            <p>Setiap alumni memiliki profil sehingga sekolah bisa melihat profil alumni juga melihat data alumni jika sedang diperlukan.</p>
+            <h4>Galeri</h4>
+            <p>Menampilkan kumpulan foto dari acara di sekolah dari setiap jurusan, angkatan ataupun tahun lulus. Alumni dapat mengakses database foto kenangan masa sekolah disini.</p>
           </div>
         </div>
         <div class="col-md-6 mt-4">
           <div class="icon-box">
             <i class="fas fa-info mt-4" style="color: black;"></i>
-            <h4><a href="#">Kumpulan Informasi Sekolah</a></h4>
-            <p>Alumni bisa melihat informasi tentang sekolah, seperti kepala sekolah baru dan juga acara yang akan ada di sekolah agar alumni bisa ikut berpartisipasi pula.</p>
+            <h4>Informasi Sekolah Terbaru</h4>
+            <p>Alumni dapat melihat informasi tentang sekolah, seperti kepala sekolah baru dan juga acara besar yang akan diselenggarakan di sekolah agar dapat dihadiri alumni.</p>
           </div>
         </div>
       </div>
@@ -72,8 +65,8 @@
     <div class="container">
 
       <div class="text-center pb-5">
-        <h2>Partner Tim</h2>
-        <p>Tim atau partner yang bekerja dalam membuat website ini</p>
+        <h2>Tim</h2>
+        <p>Tim kecil yang bekerja dalam membuat website ini</p>
       </div>
 
       <div class="row">

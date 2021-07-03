@@ -18,22 +18,22 @@ class AlumnisController extends Controller
     {
         if (request()->has('alumni_course')) 
         {
-            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')->orderby('created_at', 'desc')->simplePaginate(11);
         }
         else if (request()->has('alumni_last_year')) 
         {
-            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::where('alumni_last_year', 'like', '%'.request('alumni_last_year').'%')->orderby('created_at', 'desc')->simplePaginate(11);
         } 
         else if (request()->has('alumni_generation')) 
         {
-            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')->orderby('created_at', 'desc')->simplePaginate(11);
         }
         else if (request()->has('search')) {
-            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::where('name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(11);
         }
         else 
         {
-            $users = User::orderby('created_at', 'desc')->simplePaginate(3);
+            $users = User::orderby('created_at', 'desc')->simplePaginate(11);
         }
 
         return view('Alumni.daftar-alumni', compact('users'));

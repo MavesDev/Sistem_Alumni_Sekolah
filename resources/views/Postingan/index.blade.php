@@ -53,7 +53,7 @@
         <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-outline-dark"><i class="fas fa-plus"> Tambah Postingan</i></button>
         <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter"> Filter</i></button>
         <div style="float: right;">
-            <form action="/posts" method="get" style="float: right; display: inline;">
+            <form autocomplete="off" action="/posts" method="get" style="float: right; display: inline;">
                 <input type="text" name="search" class="col-8 btn btn-outline-dark" placeholder="  Cari" style="padding: 2px 0px; text-align:left;">
                 <button data-bs-toggle="modal" class="btn btn-outline-dark" style="float: right;"><i class="fas fa-search"> Cari</i></button>
             </form>
@@ -131,7 +131,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Judul Postingan</label>
-                                <input type="text" class="form-control @error('post_name') is-invalid @enderror" name="post_name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" autocomplete="off" class="form-control @error('post_name') is-invalid @enderror" name="post_name" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 @error('post_name')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -178,7 +178,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="inputDeskripsi" class="form-label">Deskripsi</label>
-                                <textarea id="inputDeskripsi" name="post_desc" class="form-control @error('post_desc') is-invalid @enderror" aria-describedby="deskripsi" maxlength="1000" style="width: 12cm;"></textarea>
+                                <textarea style="resize: none; height: 3cm" id="inputDeskripsi" name="post_desc" class="form-control @error('post_desc') is-invalid @enderror" aria-describedby="deskripsi" maxlength="1000" style="width: 12cm;"></textarea>
                                 <div id="emailHelp" class="form-text">Maksimal 1000 Karakter.</div>
                                 @error('post_desc')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -246,7 +246,7 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Judul Postingan</label>
-                                <input type="text" class="form-control @error('post_name') is-invalid @enderror" name="post_name" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->post_name }}">
+                                <input autocomplete="off" type="text" class="form-control @error('post_name') is-invalid @enderror" name="post_name" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $data->post_name }}">
                                 @error('post_name')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -291,7 +291,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="inputDeskripsi" class="form-label">Deskripsi</label>
-                                <textarea id="inputDeskripsi" name="post_desc" class="form-control @error('post_desc') is-invalid @enderror" aria-describedby="deskripsi" maxlength="1000" style="width: 12cm;"> {{ $data->post_desc }}</textarea>
+                                <textarea style="resize: none; height: 3cm" id="inputDeskripsi" name="post_desc" class="form-control @error('post_desc') is-invalid @enderror" aria-describedby="deskripsi" maxlength="1000" style="width: 12cm;"> {{ $data->post_desc }}</textarea>
                                 <div id="emailHelp" class="form-text">Maksimal 1000 Karakter.</div>
                                 @error('post_desc')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">

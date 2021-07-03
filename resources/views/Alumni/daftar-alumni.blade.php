@@ -81,7 +81,7 @@
         <h2 style="color: black;">Daftar Alumni</h2>
         <button data-bs-toggle="modal" data-bs-target="#Filter" class="btn btn-outline-dark "><i class="fas fa-filter"> Filter</i></button>
         <div style="float: right;">
-            <form action="/alumnis" method="get" style="float: right; display: inline;">
+            <form autocomplete="off" action="/alumnis" method="get" style="float: right; display: inline;">
                 <input type="text" name="search" class="col-8 btn btn-outline-dark" placeholder="  Cari" style="padding: 6px 0px; text-align:left;">
                 <button data-bs-toggle="modal" class="btn btn-outline-dark" style="float: right;"><i class="fas fa-search"> Cari</i></button>
             </form>
@@ -249,7 +249,7 @@
                                     <option value="Teknik Gambar Mesin">Teknik Gambar Mesin</option>
                                 </select>
                             </div>
-                            <div class="mb-3">
+                            {{-- <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Tahun Lulus</label>
                                 <select class="form-select" name="alumni_last_year" aria-label="Default select example">
                                     <option value="" selected>Seluruh Tahun</option>
@@ -285,7 +285,7 @@
                                     <option value="11">11</option>
                                     <option value="Dibawah Angkatan Ke-10">Dibawah Angkatan Ke-10</option>
                                 </select>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"> Kembali</i></button>

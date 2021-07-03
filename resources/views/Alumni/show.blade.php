@@ -163,7 +163,7 @@
 
 <div class="container" style="margin-top: 60px;">
     <div class="card-group card-mobile">
-        <div class="card mx-6 card-mobile">
+        <div class="card mx-6 card-mobile" style="z-index: -1">
             <i class="card-img-top fas fa-envelope text-center" style="border-radius: 100%; font-size: 128px;" alt="..."></i>
             <div class="card-body">
                 <h5 class="card-title text-center mt-2">{{ $user->email }}</h5>

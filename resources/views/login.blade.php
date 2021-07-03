@@ -38,7 +38,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" autocomplete="off" name="email">
+                                <input autocomplete="off" type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" autocomplete="off" name="email">
                                 @error('email')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -53,11 +53,6 @@
                                     {{ $message }}
                                 </div>
                                 @enderror
-                            </div>
-                            <div class="form-group d-md-flex">
-                                <div class="w-100 text-md-left  mb-2">
-                                    <a href="/reset" style="color:  #4a9ad0;">Lupa Password?</a>
-                                </div>
                             </div>
 
                             <div class="form-group mt-4">
