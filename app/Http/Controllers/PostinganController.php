@@ -20,13 +20,12 @@ class PostinganController extends Controller
         {
             $posts = Postingan::where('post_name', 'like', '%' . request('search') . '%')->orderby('created_at', 'desc')->simplePaginate(10);
         }
-        else if (request()->has('post_course')) 
+        else if (request()->has('post_course') && request()->has('post_category')) 
         {
-            $posts = Postingan::where('post_course', 'like', '%' . request('post_course') . '%')->orderby('created_at','desc')->simplePaginate(10);
-        }
-        else if (request()->has('post_category')) 
-        {
-            $posts = Postingan::where('post_category', 'like', '%' . request('post_category') . '%')->orderby('created_at','desc')->simplePaginate(10);
+            $posts = Postingan::where('post_course', 'like', '%' . request('post_course') . '%')
+            ->where('post_category', 'like', '%' . request('post_category') . '%')
+            ->orderby('created_at', 'desc')
+            ->simplePaginate(10);
         }
         else 
         {
@@ -57,6 +56,7 @@ class PostinganController extends Controller
         $request->validate([
             'post_name' => 'required',
             'post_course' => 'required',
+            'post_image' => 'required|mimes:jpeg,jpg,png',
             'post_category' => 'required',
         ]);
         // Book::create($request->all());

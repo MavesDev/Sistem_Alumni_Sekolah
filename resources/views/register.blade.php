@@ -48,7 +48,7 @@
                             @csrf
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input autocomplete="off" type="text" class="form-control @error('name') is-invalid @enderror" autocomplete="off" placeholder="Nama" name="name">
+                                <input type="text" class="form-control @error('name') is-invalid @enderror" autocomplete="off" placeholder="Nama" name="name" required value="{{ old('name') }}">
 
                                 @error('name')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -105,7 +105,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fas fa-address-card"></span></div>
-                                <input autocomplete="off" type="text" class="form-control @error('alumni-code') is-invalid @enderror" autocomplete="off" placeholder="NIS (9 Karakter)" name="alumni_code">
+                                <input type="text" class="form-control @error('alumni-code') is-invalid @enderror" autocomplete="off" placeholder="NIS (9 Karakter)" name="alumni_code" required value="{{ old('alumni_code') }}">
                                 @error('alumni_code')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
@@ -114,7 +114,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fas fa-home"></span></div>
-                                <input autocomplete="off" type="text" class="form-control @error('alumni_domisil') is-invalid @enderror" autocomplete="off" placeholder="Domisili" name="alumni_domisil">
+                                <input type="text" class="form-control @error('alumni_domisil') is-invalid @enderror" autocomplete="off" placeholder="Domisili" name="alumni_domisil" required value="{{ old('alumni_domisil') }}">
 
                                 @error('alumni_domisil')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
@@ -182,7 +182,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="icon d-flex align-items-center justify-content-center"><span class="fas fa-user-tie"></span></div>
-                                <input autocomplete="off" type="text" class="form-control @error('alumni_job') is-invalid @enderror" autocomplete="off" placeholder="Pekerjaan" name="alumni_job">
+                                <input type="text" class="form-control @error('alumni_job') is-invalid @enderror" autocomplete="off" placeholder="Pekerjaan" name="alumni_job" required value="{{ old('alumni_job') }}">
 
                                 @error('alumni_job')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">

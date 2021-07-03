@@ -43,7 +43,7 @@ class BerandaController extends Controller
     {
         $request->validate([
             'headMaster_name' => 'required',
-            'headMaster_image' => 'required',
+            'headMaster_image' => 'required|mimes:jpeg,jpg,png',
             'headMaster_desc' => 'required'
         ]);
 
@@ -81,7 +81,7 @@ class BerandaController extends Controller
     {
         $request->validate([
             'event_name' => 'required',
-            'event_image' => 'required',
+            'event_image' => 'required|mimes:jpeg,jpg,png',
             'event_desc' => 'required'
         ]);
 

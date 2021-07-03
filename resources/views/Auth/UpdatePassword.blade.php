@@ -33,23 +33,28 @@
                         <div class="img d-flex align-items-center justify-content-center" style="background-color: #5faee3; border-radius: 50%; color: black;">
                             <i class="far fa-user" style="font-size: 70px; margin-right: 1px;"></i>
                         </div>
-                        <h3 class="text-center mb-4" style="color: black;">Masukan Email Anda</h3>
-                        <form action="/reset" method="post" class="login-form">
+                        <h3 class="text-center mb-4" style="color: black;">Reset Password</h3>
+                        <form action="/password/{{ $user -> id }}/update" method="post" class="login-form">
                             @csrf
                             <div class="form-group">
-                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-user"></span></div>
-                                <input type="text" class="form-control @error('email') is-invalid @enderror" placeholder="Email" autocomplete="off" name="email">
-                                @error('email')
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password Baru Anda" autocomplete="off" name="password">
+                                @error('password')
                                 <div id="invalidCheck3Feedback" class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                                 @enderror
                             </div>
+                            <div class="form-group">
+                                <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-lock"></span></div>
+                                <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror" placeholder="Konfirmasi Password" autocomplete="off" name="password_confirmation">
+                            </div>
 
                             <div class="form-group mt-4">
-                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Konfirmasi Email</button>
+                                <button type="submit" class="btn form-control btn-primary rounded submit px-3">Ubah Password</button>
                             </div>
                         </form>
+
                     </div>
                 </div>
             </div>
