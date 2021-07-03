@@ -36,7 +36,7 @@ class EmailController extends Controller
           ->subject($data['subject']);
         });
 
-        return back()->with(['message' => 'Email successfully sent!'], compact('data'));
+        return back()->with(['message' => 'Email konfirmasi berhasil dikirim!'], compact('data'));
     }
 
 }
