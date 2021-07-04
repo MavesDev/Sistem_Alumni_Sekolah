@@ -8,17 +8,17 @@
     <title>@yield('title') | SMKN 1 Katapang</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
-    
+    <link rel="icon" href="{{ asset('img/Logo.png') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    
+
     <!-- Favicons -->
     <link href="assets/img/favicon.png" rel="icon">
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
-    
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-    
+
     <!-- Vendor CSS Files -->
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
@@ -31,7 +31,17 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     @if (auth()->user()->level == "user")
-    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8483ff3b-816a-4784-a30d-f03c4e5afc5d";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+    <script type="text/javascript">
+        window.$crisp = [];
+        window.CRISP_WEBSITE_ID = "8483ff3b-816a-4784-a30d-f03c4e5afc5d";
+        (function() {
+            d = document;
+            s = d.createElement("script");
+            s.src = "https://client.crisp.chat/l.js";
+            s.async = 1;
+            d.getElementsByTagName("head")[0].appendChild(s);
+        })();
+    </script>
     @endif
 
 </head>
@@ -142,12 +152,12 @@
         //     $(".loader-wrapper").fadeOut("slow");
         // });
 
-    var loader = document.querySelector(".loader-wrapper");
-    window.addEventListener("load",vanish);
-    function vanish() 
-    {
-        loader.classList.add("disappear");   
-    }
+        var loader = document.querySelector(".loader-wrapper");
+        window.addEventListener("load", vanish);
+
+        function vanish() {
+            loader.classList.add("disappear");
+        }
     </script>
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="fas fa-sort-up mt-2"></i></a>

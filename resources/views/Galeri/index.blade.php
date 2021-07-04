@@ -54,8 +54,7 @@
                             <div class="mb-3">
                                 <label for="galeri_last_year" class="form-label">Tahun Foto</label>
                                 <select class="form-select" id="galeri_last_year" name="galeri_last_year" aria-label="Default select example">
-                                    <option value="" selected>Semua Tahun</option>
-                                    <option value="2022">2022</option>
+                                    <option value="2022" selected>2022</option>
                                     <option value="2021">2021</option>
                                     <option value="2020">2020</option>
                                     <option value="2019">2019</option>
@@ -74,7 +73,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jurusan Foto</label>
                                 <select class="form-select" name="galeri_course" aria-label="Default select example">
-                                    <option selected>Semua Jurusan</option>
+                                    <option value="Semua Jurusan" selected>Semua Jurusan</option>
                                     <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                                     <option value="Multimedia">Multimedia</option>
                                     <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>

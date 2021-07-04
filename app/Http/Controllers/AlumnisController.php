@@ -22,10 +22,17 @@ class AlumnisController extends Controller
             $users = User::where('alumni_course', 'like', '%'.request('alumni_course').'%')
             ->where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')
             ->where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')
-            ->where('name', 'like', '%' . request('search') . '%')
-            ->orderby('created_at', 'desc')
-            ->simplePaginate(3);
+            ->orderby('created_at', 'desc',)
+            ->simplePaginate(11);
         }
+
+        else if (request()->has('search')) 
+        {
+            $users = User::where('name', 'like', '%' . request('search') . '%')
+            ->orderby('created_at', 'desc')
+            ->simplePaginate(11);
+        }
+
         else 
         {
             $users = User::orderby('created_at', 'desc')->simplePaginate(11);
@@ -262,9 +269,9 @@ class AlumnisController extends Controller
             $users = User::where('alumni_course', 'like', '%' . request('alumni_course') . '%')
             ->where('alumni_last_year', 'like', '%' . request('alumni_last_year') . '%')
             ->where('alumni_generation', 'like', '%' . request('alumni_generation') . '%')
-            ->where('name', 'like', '%' . request('search') . '%')
             ->orderby('created_at', 'desc')
-            ->simplePaginate(3);
+            ->simplePaginate(999)
+            ->all();
         }
 
         return view('Alumni.report', compact('users'));

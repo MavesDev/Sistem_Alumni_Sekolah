@@ -39,17 +39,6 @@
         <p style="font-family: serif;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
     </div>
 
-    <div class="container pt-4">
-        @foreach ($userss as $data)
-        <p style="font-family: serif; color: black; font-size: 18px;">Kepala sekolah SNK Negeri 1 Katapang menerangkan bahwa :</p>
-        <ul>
-            <li>
-                <p style="font-family: serif; color: black; font-size: 14px;">Jurusan &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp; : {{ $data->alumni_course }}</p>
-            </li>
-        </ul>
-        @endforeach
-    </div>
-
     <div class="container mt-3" style="padding-top: 20px;">
         <table class="table table-hover table-striped text-center mt-4">
             <thead class="table table-dark">
@@ -85,9 +74,6 @@
         <p style="font-family: serif; color: black; font-size: 18px; float:right; margin-right: 130px;">Kepala sekolah </p>
     </div>
 
-    <script>
-        window.print();
-    </script>
 
     <script src="{{asset('/js/Login/jquery.min.js')}}"></script>
     <script src="{{asset('/js/Login/popper.js')}}"></script>

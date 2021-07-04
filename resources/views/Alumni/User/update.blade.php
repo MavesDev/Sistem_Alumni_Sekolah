@@ -160,6 +160,38 @@
             </div>
             @enderror
         </div>
+<!-- 
+        <div class="text-center mt-5 mb-5">
+            <h3>Akun</h3>
+        </div>
+
+        <div class="mb-3 col-7">
+            <label for="email" class="form-label">Nama Anda</label>
+            <input autocomplete="off" type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" aria-describedby="emailHelp" placeholder="Masukan nama anda" value="{{ $user->email }}" disabled>
+            @error('email')
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-7">
+            <label for="password" class="form-label">Password Anda</label>
+            <input autocomplete="off" type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" aria-describedby="passwordHelp" placeholder="Masukan password anda">
+            @error('password')
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+        <div class="mb-3 col-7">
+            <label for="password_confirmation" class="form-label">Konfirmasi Password Anda</label>
+            <input autocomplete="off" type="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation" name="password_confirmation" aria-describedby="password_confirmationHelp" placeholder="Masukan konfirmasi password anda">
+            @error('password_confirmation')
+            <div id="invalidCheck3Feedback" class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div> -->
 
         <button type="submit" class="btn btn-outline-dark mt-2"><i class="fas fa-edit"></i> Edit Profil </button>
         <a href="/alumnis" class="btn btn-outline-dark mt-2"><i class="fas fa-arrow-circle-left"></i> Kembali</a>

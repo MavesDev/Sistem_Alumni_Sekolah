@@ -8,6 +8,7 @@
     <title>Arsip Alumni | SMKN 1 Katapang</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
+    <link rel="icon" href="{{ asset('img/Logo.png') }}">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 

@@ -249,7 +249,7 @@
                                     <option value="Teknik Gambar Mesin">Teknik Gambar Mesin</option>
                                 </select>
                             </div>
-                            {{-- <div class="mb-3">
+                            <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Tahun Lulus</label>
                                 <select class="form-select" name="alumni_last_year" aria-label="Default select example">
                                     <option value="" selected>Seluruh Tahun</option>
@@ -285,7 +285,7 @@
                                     <option value="11">11</option>
                                     <option value="Dibawah Angkatan Ke-10">Dibawah Angkatan Ke-10</option>
                                 </select>
-                            </div> --}}
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal"><i class="fas fa-arrow-circle-left"> Kembali</i></button>

@@ -106,7 +106,7 @@
                         <p style="white-space: pre-line">
                             {{ $beranda->event_desc }}
                         </p>
-                        <a href="/img/Postingan/Beranda/{{ $beranda->event_image }}" download="poster_sekolah.jpg" class="btn btn-secondary btn-sm">Download Poster</a>
+                        <a href="/img/Postingan/Beranda/{{ $beranda->event_image }}" download="poster_sekolah.jpg" class="btn btn-dark btn-sm">Download Poster</a>
                     </div>
                 </div>
             @endforeach

@@ -66,7 +66,6 @@ class GalerisController extends Controller
 
         // Book::create($request->all());
 
-
         Galeri::create([
             'galeri_name' => $request->galeri_name,
             'galeri_image' => $imgName,

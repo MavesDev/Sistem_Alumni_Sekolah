@@ -153,7 +153,7 @@
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Jurusan Postingan</label>
                                 <select class="form-select" name="post_course" aria-label="Default select example">
-                                    <option selected>Semua Jurusan</option>
+                                    <option value="Semua Jurusan" selected>Semua Jurusan</option>
                                     <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                                     <option value="Multimedia">Multimedia</option>
                                     <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
